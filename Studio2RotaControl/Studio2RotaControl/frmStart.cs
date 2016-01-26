@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Studio2RotaControl
 {
-    public partial class Form1 : Form
+    public partial class frmStart : Form
     {
-        public Form1()
+        public frmStart()
         {
             InitializeComponent();
+        }
+
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnViewRota_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
