@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Studio2RotaControl
+﻿namespace Studio2RotaControl
 {
     public static class classSessionStorage
     {
-        public static string Username = "default";
-        public static int PermLevel = 0;
+        #region Fields
 
+        public static int PermLevel = 0;
+        public static string Username = "default";
+
+        #endregion Fields
     }
 }

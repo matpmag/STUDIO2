@@ -1,55 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Studio2RotaControl
 {
     public partial class frmLogin : Form
     {
+        #region Constructors
+
         public frmLogin()
         {
             InitializeComponent();
         }
 
-        private void tbxUsername_Enter(object sender, EventArgs e)
-        {
-            tbxUsername.ForeColor = SystemColors.WindowText;
-            tbxUsername.Text = "";
-        }
+        #endregion Constructors
 
-        private void tbxUsername_Leave(object sender, EventArgs e)
-        {
-            if (tbxUsername.Text == "")
-            {
-                tbxUsername.Text = "Username";
-                tbxUsername.ForeColor = Color.DarkGray;
-            }
-        }
-
-        private void tbxPassword_Enter(object sender, EventArgs e)
-        {
-            tbxPassword.ForeColor = SystemColors.WindowText;
-            tbxPassword.Text = "";
-            tbxPassword.UseSystemPasswordChar = true;
-        }
-
-        private void tbxPassword_Leave(object sender, EventArgs e)
-        {
-            if (tbxPassword.Text == "")
-            {
-                tbxUsername.Text = "Password";
-                tbxPassword.UseSystemPasswordChar = false;
-                tbxUsername.ForeColor = Color.DarkGray;
-            }
-        }
+        #region Methods
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
@@ -97,9 +66,43 @@ namespace Studio2RotaControl
             }
         }
 
+        private void tbxPassword_Enter(object sender, EventArgs e)
+        {
+            tbxPassword.ForeColor = SystemColors.WindowText;
+            tbxPassword.Text = "";
+            tbxPassword.UseSystemPasswordChar = true;
+        }
+
+        private void tbxPassword_Leave(object sender, EventArgs e)
+        {
+            if (tbxPassword.Text == "")
+            {
+                tbxUsername.Text = "Password";
+                tbxPassword.UseSystemPasswordChar = false;
+                tbxUsername.ForeColor = Color.DarkGray;
+            }
+        }
+
+        private void tbxUsername_Enter(object sender, EventArgs e)
+        {
+            tbxUsername.ForeColor = SystemColors.WindowText;
+            tbxUsername.Text = "";
+        }
+
         private void tbxUsername_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
+        private void tbxUsername_Leave(object sender, EventArgs e)
+        {
+            if (tbxUsername.Text == "")
+            {
+                tbxUsername.Text = "Username";
+                tbxUsername.ForeColor = Color.DarkGray;
+            }
+        }
+
+        #endregion Methods
     }
 }

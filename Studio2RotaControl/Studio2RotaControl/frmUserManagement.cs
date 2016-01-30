@@ -12,10 +12,16 @@ namespace Studio2RotaControl
 {
     public partial class frmUserManagement : Form
     {
+        #region Constructors
+
         public frmUserManagement()
         {
             InitializeComponent();
         }
+
+        #endregion Constructors
+
+        #region Methods
 
         private void btnHideEdit_Click(object sender, EventArgs e)
         {
@@ -31,5 +37,7 @@ namespace Studio2RotaControl
             this.table_StaffTableAdapter.Fill(this.s2DataStoreDataSet.table_Staff);
 
         }
+
+        #endregion Methods
     }
 }

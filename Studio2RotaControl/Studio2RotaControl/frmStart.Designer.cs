@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStart));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -35,8 +36,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.btnViewRota = new System.Windows.Forms.Button();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.iconContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ContextMenuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.iconContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -125,6 +130,28 @@
             this.btnViewRota.UseVisualStyleBackColor = true;
             this.btnViewRota.Click += new System.EventHandler(this.btnViewRota_Click);
             // 
+            // notifyIcon
+            // 
+            this.notifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon.ContextMenuStrip = this.iconContextMenu;
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "Studio2";
+            this.notifyIcon.DoubleClick += new System.EventHandler(this.notifyIcon_DoubleClick);
+            // 
+            // iconContextMenu
+            // 
+            this.iconContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ContextMenuExit});
+            this.iconContextMenu.Name = "iconContextMenu";
+            this.iconContextMenu.Size = new System.Drawing.Size(147, 26);
+            // 
+            // ContextMenuExit
+            // 
+            this.ContextMenuExit.Name = "ContextMenuExit";
+            this.ContextMenuExit.Size = new System.Drawing.Size(152, 22);
+            this.ContextMenuExit.Text = "Close Studio2";
+            this.ContextMenuExit.Click += new System.EventHandler(this.ContextMenuExit_Click);
+            // 
             // frmStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,12 +162,14 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmStart";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Studio2";
             this.Resize += new System.EventHandler(this.frmStart_Resize);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.iconContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -153,6 +182,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.ContextMenuStrip iconContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem ContextMenuExit;
     }
 }
 
