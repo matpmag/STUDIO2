@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Studio2RotaControl
 {
-    public partial class ctrlUserManagement : UserControl
+    public partial class ctrlAccountManagement : UserControl
     {
-        public ctrlUserManagement()
+        public ctrlAccountManagement()
         {
             InitializeComponent();
         }

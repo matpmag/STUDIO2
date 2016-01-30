@@ -28,5 +28,10 @@ namespace Studio2RotaControl
         {
 
         }
+
+        private void frmStart_Resize(object sender, EventArgs e)
+        {
+
+        }
     }
 }
