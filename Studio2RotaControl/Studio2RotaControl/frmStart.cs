@@ -19,7 +19,9 @@ namespace Studio2RotaControl
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            
+            Form frmLogin = new frmLogin();
+            this.Hide();
+            frmLogin.Show();
         }
 
         private void btnViewRota_Click(object sender, EventArgs e)

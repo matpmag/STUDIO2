@@ -7,3 +7,4 @@ C:\Users\Matthew\Documents\GitHub\Online\STUDIO2\Studio2RotaControl\Studio2RotaC
 C:\Users\Matthew\Documents\GitHub\Online\STUDIO2\Studio2RotaControl\Studio2RotaControl\obj\Debug\Studio2RotaControl.csproj.GenerateResource.Cache
 C:\Users\Matthew\Documents\GitHub\Online\STUDIO2\Studio2RotaControl\Studio2RotaControl\obj\Debug\Studio2RotaControl.exe
 C:\Users\Matthew\Documents\GitHub\Online\STUDIO2\Studio2RotaControl\Studio2RotaControl\obj\Debug\Studio2RotaControl.pdb
+C:\Users\Matthew\Documents\GitHub\Online\STUDIO2\Studio2RotaControl\Studio2RotaControl\obj\Debug\Studio2RotaControl.frmLogin.resources

@@ -72,6 +72,8 @@
             this.tbxUsername.TabIndex = 1;
             this.tbxUsername.Text = "Username";
             this.tbxUsername.Enter += new System.EventHandler(this.tbxUsername_Enter);
+            this.tbxUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxUsername_KeyPress);
+            this.tbxUsername.Leave += new System.EventHandler(this.tbxUsername_Leave);
             // 
             // tbxPassword
             // 
@@ -83,7 +85,8 @@
             this.tbxPassword.Size = new System.Drawing.Size(268, 26);
             this.tbxPassword.TabIndex = 2;
             this.tbxPassword.Text = "Password";
-            this.tbxPassword.TextChanged += new System.EventHandler(this.tbxPassword_TextChanged);
+            this.tbxPassword.Enter += new System.EventHandler(this.tbxPassword_Enter);
+            this.tbxPassword.Leave += new System.EventHandler(this.tbxPassword_Leave);
             // 
             // btnLogIn
             // 
@@ -96,6 +99,7 @@
             this.btnLogIn.TabIndex = 0;
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseVisualStyleBackColor = true;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
             // frmLogin
             // 
