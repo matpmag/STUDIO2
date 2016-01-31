@@ -1,6 +1,6 @@
 ﻿namespace Studio2RotaControl
 {
-    partial class frmUserManagement
+    partial class frmNewUser
     {
         /// <summary>
         /// Required designer variable.
@@ -28,23 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.tblMaster = new System.Windows.Forms.TableLayoutPanel();
-            this.tblSearch = new System.Windows.Forms.TableLayoutPanel();
-            this.lblSearch = new System.Windows.Forms.Label();
-            this.lblSearchProperty = new System.Windows.Forms.Label();
-            this.lblSearchValue = new System.Windows.Forms.Label();
-            this.lbxResults = new System.Windows.Forms.ListBox();
-            this.cbxProperty = new System.Windows.Forms.ComboBox();
-            this.tableStaffBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.s2DataStoreDataSet = new Studio2RotaControl.S2DataStoreDataSet();
-            this.tbxValue = new System.Windows.Forms.TextBox();
-            this.btnHideEdit = new System.Windows.Forms.Button();
             this.tblEdit = new System.Windows.Forms.TableLayoutPanel();
             this.tblStaffID = new System.Windows.Forms.TableLayoutPanel();
             this.lblStaffID = new System.Windows.Forms.Label();
             this.btnPassword = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.tblProfileQualification = new System.Windows.Forms.TableLayoutPanel();
             this.gbxProfile = new System.Windows.Forms.GroupBox();
             this.tblProfile = new System.Windows.Forms.TableLayoutPanel();
@@ -90,11 +77,6 @@
             this.tblExit = new System.Windows.Forms.TableLayoutPanel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDiscard = new System.Windows.Forms.Button();
-            this.table_StaffTableAdapter = new Studio2RotaControl.S2DataStoreDataSetTableAdapters.table_StaffTableAdapter();
-            this.tblMaster.SuspendLayout();
-            this.tblSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableStaffBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.s2DataStoreDataSet)).BeginInit();
             this.tblEdit.SuspendLayout();
             this.tblStaffID.SuspendLayout();
             this.tblProfileQualification.SuspendLayout();
@@ -112,131 +94,6 @@
             this.tblExit.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tblMaster
-            // 
-            this.tblMaster.ColumnCount = 1;
-            this.tblMaster.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblMaster.Controls.Add(this.tblSearch, 0, 0);
-            this.tblMaster.Controls.Add(this.tblEdit, 0, 1);
-            this.tblMaster.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblMaster.Location = new System.Drawing.Point(0, 0);
-            this.tblMaster.Name = "tblMaster";
-            this.tblMaster.RowCount = 2;
-            this.tblMaster.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.63506F));
-            this.tblMaster.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.36494F));
-            this.tblMaster.Size = new System.Drawing.Size(784, 907);
-            this.tblMaster.TabIndex = 0;
-            // 
-            // tblSearch
-            // 
-            this.tblSearch.ColumnCount = 5;
-            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.61465F));
-            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.38535F));
-            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tblSearch.Controls.Add(this.lblSearch, 1, 1);
-            this.tblSearch.Controls.Add(this.lblSearchProperty, 1, 2);
-            this.tblSearch.Controls.Add(this.lblSearchValue, 1, 3);
-            this.tblSearch.Controls.Add(this.lbxResults, 1, 4);
-            this.tblSearch.Controls.Add(this.cbxProperty, 2, 2);
-            this.tblSearch.Controls.Add(this.tbxValue, 2, 3);
-            this.tblSearch.Controls.Add(this.btnHideEdit, 3, 5);
-            this.tblSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblSearch.Location = new System.Drawing.Point(3, 3);
-            this.tblSearch.Name = "tblSearch";
-            this.tblSearch.RowCount = 6;
-            this.tblSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tblSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tblSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tblSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tblSearch.Size = new System.Drawing.Size(778, 289);
-            this.tblSearch.TabIndex = 9;
-            // 
-            // lblSearch
-            // 
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.lblSearch.Location = new System.Drawing.Point(23, 20);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(93, 29);
-            this.lblSearch.TabIndex = 0;
-            this.lblSearch.Text = "Search";
-            // 
-            // lblSearchProperty
-            // 
-            this.lblSearchProperty.AutoSize = true;
-            this.lblSearchProperty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.lblSearchProperty.Location = new System.Drawing.Point(23, 53);
-            this.lblSearchProperty.Name = "lblSearchProperty";
-            this.lblSearchProperty.Size = new System.Drawing.Size(77, 20);
-            this.lblSearchProperty.TabIndex = 1;
-            this.lblSearchProperty.Text = "Property:";
-            // 
-            // lblSearchValue
-            // 
-            this.lblSearchValue.AutoSize = true;
-            this.lblSearchValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.lblSearchValue.Location = new System.Drawing.Point(23, 89);
-            this.lblSearchValue.Name = "lblSearchValue";
-            this.lblSearchValue.Size = new System.Drawing.Size(56, 20);
-            this.lblSearchValue.TabIndex = 2;
-            this.lblSearchValue.Text = "Value:";
-            // 
-            // lbxResults
-            // 
-            this.tblSearch.SetColumnSpan(this.lbxResults, 3);
-            this.lbxResults.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbxResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.lbxResults.FormattingEnabled = true;
-            this.lbxResults.ItemHeight = 20;
-            this.lbxResults.Location = new System.Drawing.Point(23, 129);
-            this.lbxResults.Name = "lbxResults";
-            this.lbxResults.Size = new System.Drawing.Size(730, 125);
-            this.lbxResults.TabIndex = 3;
-            // 
-            // cbxProperty
-            // 
-            this.tblSearch.SetColumnSpan(this.cbxProperty, 2);
-            this.cbxProperty.DataSource = this.tableStaffBindingSource;
-            this.cbxProperty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.cbxProperty.FormattingEnabled = true;
-            this.cbxProperty.Location = new System.Drawing.Point(244, 56);
-            this.cbxProperty.Name = "cbxProperty";
-            this.cbxProperty.Size = new System.Drawing.Size(255, 28);
-            this.cbxProperty.TabIndex = 5;
-            // 
-            // tableStaffBindingSource
-            // 
-            this.tableStaffBindingSource.DataMember = "table_Staff";
-            this.tableStaffBindingSource.DataSource = this.s2DataStoreDataSet;
-            // 
-            // s2DataStoreDataSet
-            // 
-            this.s2DataStoreDataSet.DataSetName = "S2DataStoreDataSet";
-            this.s2DataStoreDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbxValue
-            // 
-            this.tblSearch.SetColumnSpan(this.tbxValue, 2);
-            this.tbxValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.tbxValue.Location = new System.Drawing.Point(244, 92);
-            this.tbxValue.Name = "tbxValue";
-            this.tbxValue.Size = new System.Drawing.Size(255, 26);
-            this.tbxValue.TabIndex = 6;
-            // 
-            // btnHideEdit
-            // 
-            this.btnHideEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHideEdit.Location = new System.Drawing.Point(723, 260);
-            this.btnHideEdit.Name = "btnHideEdit";
-            this.btnHideEdit.Size = new System.Drawing.Size(30, 26);
-            this.btnHideEdit.TabIndex = 7;
-            this.btnHideEdit.UseVisualStyleBackColor = true;
-            this.btnHideEdit.Click += new System.EventHandler(this.btnHideEdit_Click);
-            // 
             // tblEdit
             // 
             this.tblEdit.ColumnCount = 4;
@@ -249,7 +106,7 @@
             this.tblEdit.Controls.Add(this.gbxEmployment, 1, 2);
             this.tblEdit.Controls.Add(this.tblContactExit, 1, 3);
             this.tblEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblEdit.Location = new System.Drawing.Point(3, 298);
+            this.tblEdit.Location = new System.Drawing.Point(0, 0);
             this.tblEdit.Name = "tblEdit";
             this.tblEdit.RowCount = 5;
             this.tblEdit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -262,35 +119,32 @@
             this.tblEdit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblEdit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblEdit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblEdit.Size = new System.Drawing.Size(778, 606);
-            this.tblEdit.TabIndex = 8;
+            this.tblEdit.Size = new System.Drawing.Size(862, 631);
+            this.tblEdit.TabIndex = 9;
             // 
             // tblStaffID
             // 
-            this.tblStaffID.ColumnCount = 2;
-            this.tblStaffID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblStaffID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblStaffID.ColumnCount = 1;
+            this.tblStaffID.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.45258F));
             this.tblStaffID.Controls.Add(this.lblStaffID, 0, 0);
             this.tblStaffID.Controls.Add(this.btnPassword, 0, 1);
-            this.tblStaffID.Controls.Add(this.btnDelete, 1, 1);
             this.tblStaffID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblStaffID.Location = new System.Drawing.Point(23, 23);
             this.tblStaffID.Name = "tblStaffID";
             this.tblStaffID.RowCount = 2;
             this.tblStaffID.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblStaffID.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblStaffID.Size = new System.Drawing.Size(331, 132);
+            this.tblStaffID.Size = new System.Drawing.Size(369, 138);
             this.tblStaffID.TabIndex = 7;
             // 
             // lblStaffID
             // 
             this.lblStaffID.AutoSize = true;
-            this.tblStaffID.SetColumnSpan(this.lblStaffID, 2);
             this.lblStaffID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblStaffID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
             this.lblStaffID.Location = new System.Drawing.Point(3, 0);
             this.lblStaffID.Name = "lblStaffID";
-            this.lblStaffID.Size = new System.Drawing.Size(325, 66);
+            this.lblStaffID.Size = new System.Drawing.Size(363, 69);
             this.lblStaffID.TabIndex = 0;
             this.lblStaffID.Text = "<StaffID>";
             this.lblStaffID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -299,23 +153,12 @@
             // 
             this.btnPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnPassword.Location = new System.Drawing.Point(3, 69);
+            this.btnPassword.Location = new System.Drawing.Point(3, 72);
             this.btnPassword.Name = "btnPassword";
-            this.btnPassword.Size = new System.Drawing.Size(159, 60);
+            this.btnPassword.Size = new System.Drawing.Size(363, 63);
             this.btnPassword.TabIndex = 1;
             this.btnPassword.Text = "Change Password";
             this.btnPassword.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnDelete.Location = new System.Drawing.Point(168, 69);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(160, 60);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Delete User";
-            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // tblProfileQualification
             // 
@@ -324,14 +167,14 @@
             this.tblProfileQualification.Controls.Add(this.gbxProfile, 0, 0);
             this.tblProfileQualification.Controls.Add(this.tblQualifications, 0, 1);
             this.tblProfileQualification.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblProfileQualification.Location = new System.Drawing.Point(360, 23);
+            this.tblProfileQualification.Location = new System.Drawing.Point(398, 23);
             this.tblProfileQualification.Name = "tblProfileQualification";
             this.tblProfileQualification.RowCount = 2;
             this.tblEdit.SetRowSpan(this.tblProfileQualification, 2);
             this.tblProfileQualification.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.9868F));
             this.tblProfileQualification.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.0132F));
             this.tblProfileQualification.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblProfileQualification.Size = new System.Drawing.Size(394, 308);
+            this.tblProfileQualification.Size = new System.Drawing.Size(440, 321);
             this.tblProfileQualification.TabIndex = 12;
             // 
             // gbxProfile
@@ -341,7 +184,7 @@
             this.gbxProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxProfile.Location = new System.Drawing.Point(3, 3);
             this.gbxProfile.Name = "gbxProfile";
-            this.gbxProfile.Size = new System.Drawing.Size(388, 203);
+            this.gbxProfile.Size = new System.Drawing.Size(434, 212);
             this.gbxProfile.TabIndex = 2;
             this.gbxProfile.TabStop = false;
             this.gbxProfile.Text = "Profile";
@@ -371,7 +214,7 @@
             this.tblProfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblProfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblProfile.Size = new System.Drawing.Size(382, 178);
+            this.tblProfile.Size = new System.Drawing.Size(428, 187);
             this.tblProfile.TabIndex = 0;
             // 
             // floGender
@@ -381,9 +224,9 @@
             this.floGender.Controls.Add(this.rbtnMale);
             this.floGender.Controls.Add(this.rbtnFemale);
             this.floGender.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.floGender.Location = new System.Drawing.Point(102, 101);
+            this.floGender.Location = new System.Drawing.Point(114, 101);
             this.floGender.Name = "floGender";
-            this.floGender.Size = new System.Drawing.Size(277, 30);
+            this.floGender.Size = new System.Drawing.Size(311, 30);
             this.floGender.TabIndex = 14;
             // 
             // rbtnMale
@@ -418,7 +261,7 @@
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.lblTitle.Location = new System.Drawing.Point(3, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(93, 34);
+            this.lblTitle.Size = new System.Drawing.Size(105, 34);
             this.lblTitle.TabIndex = 8;
             this.lblTitle.Text = "Title:";
             // 
@@ -427,9 +270,9 @@
             this.cbxTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.cbxTitle.FormattingEnabled = true;
-            this.cbxTitle.Location = new System.Drawing.Point(102, 3);
+            this.cbxTitle.Location = new System.Drawing.Point(114, 3);
             this.cbxTitle.Name = "cbxTitle";
-            this.cbxTitle.Size = new System.Drawing.Size(277, 28);
+            this.cbxTitle.Size = new System.Drawing.Size(311, 28);
             this.cbxTitle.TabIndex = 3;
             // 
             // lblForename
@@ -439,7 +282,7 @@
             this.lblForename.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.lblForename.Location = new System.Drawing.Point(3, 34);
             this.lblForename.Name = "lblForename";
-            this.lblForename.Size = new System.Drawing.Size(93, 32);
+            this.lblForename.Size = new System.Drawing.Size(105, 32);
             this.lblForename.TabIndex = 9;
             this.lblForename.Text = "Forename:";
             // 
@@ -447,9 +290,9 @@
             // 
             this.tbxForename.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxForename.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.tbxForename.Location = new System.Drawing.Point(102, 37);
+            this.tbxForename.Location = new System.Drawing.Point(114, 37);
             this.tbxForename.Name = "tbxForename";
-            this.tbxForename.Size = new System.Drawing.Size(277, 26);
+            this.tbxForename.Size = new System.Drawing.Size(311, 26);
             this.tbxForename.TabIndex = 1;
             // 
             // lblSurname
@@ -459,7 +302,7 @@
             this.lblSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.lblSurname.Location = new System.Drawing.Point(3, 66);
             this.lblSurname.Name = "lblSurname";
-            this.lblSurname.Size = new System.Drawing.Size(93, 32);
+            this.lblSurname.Size = new System.Drawing.Size(105, 32);
             this.lblSurname.TabIndex = 10;
             this.lblSurname.Text = "Surname:";
             // 
@@ -467,9 +310,9 @@
             // 
             this.tbxSurname.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.tbxSurname.Location = new System.Drawing.Point(102, 69);
+            this.tbxSurname.Location = new System.Drawing.Point(114, 69);
             this.tbxSurname.Name = "tbxSurname";
-            this.tbxSurname.Size = new System.Drawing.Size(277, 26);
+            this.tbxSurname.Size = new System.Drawing.Size(311, 26);
             this.tbxSurname.TabIndex = 2;
             // 
             // lblDOB
@@ -479,7 +322,7 @@
             this.lblDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.lblDOB.Location = new System.Drawing.Point(3, 134);
             this.lblDOB.Name = "lblDOB";
-            this.lblDOB.Size = new System.Drawing.Size(93, 44);
+            this.lblDOB.Size = new System.Drawing.Size(105, 53);
             this.lblDOB.TabIndex = 13;
             this.lblDOB.Text = "Birth date:";
             // 
@@ -488,10 +331,10 @@
             this.dtpDOB.AllowDrop = true;
             this.dtpDOB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.dtpDOB.Location = new System.Drawing.Point(102, 137);
+            this.dtpDOB.Location = new System.Drawing.Point(114, 137);
             this.dtpDOB.MaxDate = new System.DateTime(2999, 1, 30, 0, 0, 0, 0);
             this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(277, 26);
+            this.dtpDOB.Size = new System.Drawing.Size(311, 26);
             this.dtpDOB.TabIndex = 7;
             this.dtpDOB.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
@@ -502,7 +345,7 @@
             this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.lblGender.Location = new System.Drawing.Point(3, 98);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(93, 36);
+            this.lblGender.Size = new System.Drawing.Size(105, 36);
             this.lblGender.TabIndex = 12;
             this.lblGender.Text = "Gender:";
             // 
@@ -514,13 +357,13 @@
             this.tblQualifications.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblQualifications.Controls.Add(this.btnQualifications, 1, 1);
             this.tblQualifications.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblQualifications.Location = new System.Drawing.Point(3, 212);
+            this.tblQualifications.Location = new System.Drawing.Point(3, 221);
             this.tblQualifications.Name = "tblQualifications";
             this.tblQualifications.RowCount = 3;
             this.tblQualifications.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblQualifications.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tblQualifications.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblQualifications.Size = new System.Drawing.Size(388, 93);
+            this.tblQualifications.Size = new System.Drawing.Size(434, 97);
             this.tblQualifications.TabIndex = 3;
             // 
             // btnQualifications
@@ -529,7 +372,7 @@
             this.btnQualifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.btnQualifications.Location = new System.Drawing.Point(23, 23);
             this.btnQualifications.Name = "btnQualifications";
-            this.btnQualifications.Size = new System.Drawing.Size(342, 47);
+            this.btnQualifications.Size = new System.Drawing.Size(388, 51);
             this.btnQualifications.TabIndex = 0;
             this.btnQualifications.Text = "Manage Qualifications";
             this.btnQualifications.UseVisualStyleBackColor = true;
@@ -539,9 +382,9 @@
             this.gbxEmployment.Controls.Add(this.tblEmployment);
             this.gbxEmployment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxEmployment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxEmployment.Location = new System.Drawing.Point(23, 161);
+            this.gbxEmployment.Location = new System.Drawing.Point(23, 167);
             this.gbxEmployment.Name = "gbxEmployment";
-            this.gbxEmployment.Size = new System.Drawing.Size(331, 170);
+            this.gbxEmployment.Size = new System.Drawing.Size(369, 177);
             this.gbxEmployment.TabIndex = 8;
             this.gbxEmployment.TabStop = false;
             this.gbxEmployment.Text = "Employment";
@@ -564,7 +407,7 @@
             this.tblEmployment.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tblEmployment.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tblEmployment.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
-            this.tblEmployment.Size = new System.Drawing.Size(325, 145);
+            this.tblEmployment.Size = new System.Drawing.Size(363, 152);
             this.tblEmployment.TabIndex = 7;
             // 
             // lblRole
@@ -584,7 +427,7 @@
             this.cbxRole.FormattingEnabled = true;
             this.cbxRole.Location = new System.Drawing.Point(107, 3);
             this.cbxRole.Name = "cbxRole";
-            this.cbxRole.Size = new System.Drawing.Size(215, 28);
+            this.cbxRole.Size = new System.Drawing.Size(253, 28);
             this.cbxRole.TabIndex = 5;
             // 
             // lblPermLevel
@@ -608,7 +451,7 @@
             0,
             0});
             this.nudPermLevel.Name = "nudPermLevel";
-            this.nudPermLevel.Size = new System.Drawing.Size(215, 26);
+            this.nudPermLevel.Size = new System.Drawing.Size(253, 26);
             this.nudPermLevel.TabIndex = 6;
             // 
             // lblEmploymentBasis
@@ -629,7 +472,7 @@
             this.floEmpolymentBasis.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.floEmpolymentBasis.Location = new System.Drawing.Point(107, 76);
             this.floEmpolymentBasis.Name = "floEmpolymentBasis";
-            this.floEmpolymentBasis.Size = new System.Drawing.Size(215, 66);
+            this.floEmpolymentBasis.Size = new System.Drawing.Size(253, 73);
             this.floEmpolymentBasis.TabIndex = 9;
             // 
             // rbtnFullTime
@@ -667,11 +510,11 @@
             this.tblContactExit.Controls.Add(this.gbxContact, 0, 0);
             this.tblContactExit.Controls.Add(this.tblExit, 1, 0);
             this.tblContactExit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblContactExit.Location = new System.Drawing.Point(23, 337);
+            this.tblContactExit.Location = new System.Drawing.Point(23, 350);
             this.tblContactExit.Name = "tblContactExit";
             this.tblContactExit.RowCount = 1;
             this.tblContactExit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblContactExit.Size = new System.Drawing.Size(731, 245);
+            this.tblContactExit.Size = new System.Drawing.Size(815, 256);
             this.tblContactExit.TabIndex = 13;
             // 
             // gbxContact
@@ -681,7 +524,7 @@
             this.gbxContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxContact.Location = new System.Drawing.Point(3, 3);
             this.gbxContact.Name = "gbxContact";
-            this.gbxContact.Size = new System.Drawing.Size(490, 239);
+            this.gbxContact.Size = new System.Drawing.Size(547, 250);
             this.gbxContact.TabIndex = 10;
             this.gbxContact.TabStop = false;
             this.gbxContact.Text = "Contact";
@@ -713,7 +556,7 @@
             this.tblContact.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tblContact.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tblContact.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tblContact.Size = new System.Drawing.Size(484, 214);
+            this.tblContact.Size = new System.Drawing.Size(541, 225);
             this.tblContact.TabIndex = 9;
             // 
             // lblAddress1
@@ -738,7 +581,7 @@
             // 
             this.lblAddress2.AutoSize = true;
             this.lblAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.lblAddress2.Location = new System.Drawing.Point(3, 35);
+            this.lblAddress2.Location = new System.Drawing.Point(3, 37);
             this.lblAddress2.Name = "lblAddress2";
             this.lblAddress2.Size = new System.Drawing.Size(121, 20);
             this.lblAddress2.TabIndex = 1;
@@ -747,7 +590,7 @@
             // tbxAddress2
             // 
             this.tbxAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.tbxAddress2.Location = new System.Drawing.Point(130, 38);
+            this.tbxAddress2.Location = new System.Drawing.Point(130, 40);
             this.tbxAddress2.Name = "tbxAddress2";
             this.tbxAddress2.Size = new System.Drawing.Size(328, 26);
             this.tbxAddress2.TabIndex = 7;
@@ -756,7 +599,7 @@
             // 
             this.lblCity.AutoSize = true;
             this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.lblCity.Location = new System.Drawing.Point(3, 70);
+            this.lblCity.Location = new System.Drawing.Point(3, 74);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(43, 20);
             this.lblCity.TabIndex = 2;
@@ -765,7 +608,7 @@
             // tbxCity
             // 
             this.tbxCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.tbxCity.Location = new System.Drawing.Point(130, 73);
+            this.tbxCity.Location = new System.Drawing.Point(130, 77);
             this.tbxCity.Name = "tbxCity";
             this.tbxCity.Size = new System.Drawing.Size(328, 26);
             this.tbxCity.TabIndex = 8;
@@ -774,7 +617,7 @@
             // 
             this.lblPostcode.AutoSize = true;
             this.lblPostcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.lblPostcode.Location = new System.Drawing.Point(3, 105);
+            this.lblPostcode.Location = new System.Drawing.Point(3, 111);
             this.lblPostcode.Name = "lblPostcode";
             this.lblPostcode.Size = new System.Drawing.Size(84, 20);
             this.lblPostcode.TabIndex = 3;
@@ -783,7 +626,7 @@
             // tbxPostcode
             // 
             this.tbxPostcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.tbxPostcode.Location = new System.Drawing.Point(130, 108);
+            this.tbxPostcode.Location = new System.Drawing.Point(130, 114);
             this.tbxPostcode.Name = "tbxPostcode";
             this.tbxPostcode.Size = new System.Drawing.Size(328, 26);
             this.tbxPostcode.TabIndex = 9;
@@ -792,7 +635,7 @@
             // 
             this.lblContactNo.AutoSize = true;
             this.lblContactNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.lblContactNo.Location = new System.Drawing.Point(3, 140);
+            this.lblContactNo.Location = new System.Drawing.Point(3, 148);
             this.lblContactNo.Name = "lblContactNo";
             this.lblContactNo.Size = new System.Drawing.Size(98, 20);
             this.lblContactNo.TabIndex = 4;
@@ -801,7 +644,7 @@
             // tbxContactNo
             // 
             this.tbxContactNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.tbxContactNo.Location = new System.Drawing.Point(130, 143);
+            this.tbxContactNo.Location = new System.Drawing.Point(130, 151);
             this.tbxContactNo.Name = "tbxContactNo";
             this.tbxContactNo.Size = new System.Drawing.Size(328, 26);
             this.tbxContactNo.TabIndex = 10;
@@ -810,7 +653,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.lblEmail.Location = new System.Drawing.Point(3, 175);
+            this.lblEmail.Location = new System.Drawing.Point(3, 185);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(56, 20);
             this.lblEmail.TabIndex = 5;
@@ -819,7 +662,7 @@
             // tbxEmail
             // 
             this.tbxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.tbxEmail.Location = new System.Drawing.Point(130, 178);
+            this.tbxEmail.Location = new System.Drawing.Point(130, 188);
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.Size = new System.Drawing.Size(328, 26);
             this.tbxEmail.TabIndex = 11;
@@ -833,14 +676,14 @@
             this.tblExit.Controls.Add(this.btnSave, 1, 1);
             this.tblExit.Controls.Add(this.btnDiscard, 1, 2);
             this.tblExit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblExit.Location = new System.Drawing.Point(499, 3);
+            this.tblExit.Location = new System.Drawing.Point(556, 3);
             this.tblExit.Name = "tblExit";
             this.tblExit.RowCount = 4;
             this.tblExit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblExit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblExit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblExit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblExit.Size = new System.Drawing.Size(229, 239);
+            this.tblExit.Size = new System.Drawing.Size(256, 250);
             this.tblExit.TabIndex = 11;
             // 
             // btnSave
@@ -850,43 +693,33 @@
             this.btnSave.Location = new System.Drawing.Point(43, 23);
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btnSave.Size = new System.Drawing.Size(143, 93);
+            this.btnSave.Size = new System.Drawing.Size(170, 99);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Save Changes";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDiscard
             // 
             this.btnDiscard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDiscard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnDiscard.Location = new System.Drawing.Point(43, 122);
+            this.btnDiscard.Location = new System.Drawing.Point(43, 128);
             this.btnDiscard.Name = "btnDiscard";
             this.btnDiscard.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btnDiscard.Size = new System.Drawing.Size(143, 93);
+            this.btnDiscard.Size = new System.Drawing.Size(170, 99);
             this.btnDiscard.TabIndex = 1;
             this.btnDiscard.Text = "Discard Changes";
             this.btnDiscard.UseVisualStyleBackColor = true;
             // 
-            // table_StaffTableAdapter
-            // 
-            this.table_StaffTableAdapter.ClearBeforeFill = true;
-            // 
-            // frmUserManagement
+            // frmNewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(784, 907);
-            this.Controls.Add(this.tblMaster);
-            this.Name = "frmUserManagement";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmUserManagement";
-            this.Load += new System.EventHandler(this.frmUserManagement_Load);
-            this.tblMaster.ResumeLayout(false);
-            this.tblSearch.ResumeLayout(false);
-            this.tblSearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableStaffBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.s2DataStoreDataSet)).EndInit();
+            this.ClientSize = new System.Drawing.Size(862, 631);
+            this.Controls.Add(this.tblEdit);
+            this.Name = "frmNewUser";
+            this.Text = "frmNewUser";
+            this.Load += new System.EventHandler(this.frmNewUser_Load);
             this.tblEdit.ResumeLayout(false);
             this.tblStaffID.ResumeLayout(false);
             this.tblStaffID.PerformLayout();
@@ -914,20 +747,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tblMaster;
-        private System.Windows.Forms.TableLayoutPanel tblSearch;
-        private System.Windows.Forms.Label lblSearch;
-        private System.Windows.Forms.Label lblSearchProperty;
-        private System.Windows.Forms.Label lblSearchValue;
-        private System.Windows.Forms.ListBox lbxResults;
-        private System.Windows.Forms.ComboBox cbxProperty;
-        private System.Windows.Forms.TextBox tbxValue;
-        private System.Windows.Forms.Button btnHideEdit;
         private System.Windows.Forms.TableLayoutPanel tblEdit;
         private System.Windows.Forms.TableLayoutPanel tblStaffID;
         private System.Windows.Forms.Label lblStaffID;
         private System.Windows.Forms.Button btnPassword;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TableLayoutPanel tblProfileQualification;
         private System.Windows.Forms.GroupBox gbxProfile;
         private System.Windows.Forms.TableLayoutPanel tblProfile;
@@ -973,8 +796,5 @@
         private System.Windows.Forms.TableLayoutPanel tblExit;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDiscard;
-        private S2DataStoreDataSet s2DataStoreDataSet;
-        private System.Windows.Forms.BindingSource tableStaffBindingSource;
-        private S2DataStoreDataSetTableAdapters.table_StaffTableAdapter table_StaffTableAdapter;
     }
 }
