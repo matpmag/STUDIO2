@@ -34,10 +34,22 @@ namespace Studio2RotaControl
         private void frmUserManagement_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 's2DataStoreDataSet.table_Staff' table. You can move, or remove it, as needed.
-            this.table_StaffTableAdapter.Fill(this.s2DataStoreDataSet.table_Staff);
+            table_StaffTableAdapter.Fill(s2DataStoreDataSet.table_Staff);
 
         }
 
         #endregion Methods
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDiscard_Click(object sender, EventArgs e)
+        {
+            Program.frmStart.WindowState = FormWindowState.Normal;
+            Program.frmStart.Show();
+            Close();
+        }
     }
 }

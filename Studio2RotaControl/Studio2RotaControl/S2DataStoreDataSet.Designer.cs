@@ -36,6 +36,8 @@ namespace Studio2RotaControl {
         
         private table_StaffQualificationDataTable tabletable_StaffQualification;
         
+        private procedure_GetMaxStaffIDDataTable tableprocedure_GetMaxStaffID;
+        
         private procedure_SearchUsersDataTable tableprocedure_SearchUsers;
         
         private global::System.Data.DataRelation relationFK_table_Absence_table_Staff;
@@ -91,6 +93,9 @@ namespace Studio2RotaControl {
                 }
                 if ((ds.Tables["table_StaffQualification"] != null)) {
                     base.Tables.Add(new table_StaffQualificationDataTable(ds.Tables["table_StaffQualification"]));
+                }
+                if ((ds.Tables["procedure_GetMaxStaffID"] != null)) {
+                    base.Tables.Add(new procedure_GetMaxStaffIDDataTable(ds.Tables["procedure_GetMaxStaffID"]));
                 }
                 if ((ds.Tables["procedure_SearchUsers"] != null)) {
                     base.Tables.Add(new procedure_SearchUsersDataTable(ds.Tables["procedure_SearchUsers"]));
@@ -170,6 +175,16 @@ namespace Studio2RotaControl {
         public table_StaffQualificationDataTable table_StaffQualification {
             get {
                 return this.tabletable_StaffQualification;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public procedure_GetMaxStaffIDDataTable procedure_GetMaxStaffID {
+            get {
+                return this.tableprocedure_GetMaxStaffID;
             }
         }
         
@@ -268,6 +283,9 @@ namespace Studio2RotaControl {
                 if ((ds.Tables["table_StaffQualification"] != null)) {
                     base.Tables.Add(new table_StaffQualificationDataTable(ds.Tables["table_StaffQualification"]));
                 }
+                if ((ds.Tables["procedure_GetMaxStaffID"] != null)) {
+                    base.Tables.Add(new procedure_GetMaxStaffIDDataTable(ds.Tables["procedure_GetMaxStaffID"]));
+                }
                 if ((ds.Tables["procedure_SearchUsers"] != null)) {
                     base.Tables.Add(new procedure_SearchUsersDataTable(ds.Tables["procedure_SearchUsers"]));
                 }
@@ -340,6 +358,12 @@ namespace Studio2RotaControl {
                     this.tabletable_StaffQualification.InitVars();
                 }
             }
+            this.tableprocedure_GetMaxStaffID = ((procedure_GetMaxStaffIDDataTable)(base.Tables["procedure_GetMaxStaffID"]));
+            if ((initTable == true)) {
+                if ((this.tableprocedure_GetMaxStaffID != null)) {
+                    this.tableprocedure_GetMaxStaffID.InitVars();
+                }
+            }
             this.tableprocedure_SearchUsers = ((procedure_SearchUsersDataTable)(base.Tables["procedure_SearchUsers"]));
             if ((initTable == true)) {
                 if ((this.tableprocedure_SearchUsers != null)) {
@@ -372,6 +396,8 @@ namespace Studio2RotaControl {
             base.Tables.Add(this.tabletable_Staff);
             this.tabletable_StaffQualification = new table_StaffQualificationDataTable();
             base.Tables.Add(this.tabletable_StaffQualification);
+            this.tableprocedure_GetMaxStaffID = new procedure_GetMaxStaffIDDataTable();
+            base.Tables.Add(this.tableprocedure_GetMaxStaffID);
             this.tableprocedure_SearchUsers = new procedure_SearchUsersDataTable();
             base.Tables.Add(this.tableprocedure_SearchUsers);
             this.relationFK_table_Absence_table_Staff = new global::System.Data.DataRelation("FK_table_Absence_table_Staff", new global::System.Data.DataColumn[] {
@@ -425,6 +451,12 @@ namespace Studio2RotaControl {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializetable_StaffQualification() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeprocedure_GetMaxStaffID() {
             return false;
         }
         
@@ -506,6 +538,9 @@ namespace Studio2RotaControl {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void table_StaffQualificationRowChangeEventHandler(object sender, table_StaffQualificationRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void procedure_GetMaxStaffIDRowChangeEventHandler(object sender, procedure_GetMaxStaffIDRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void procedure_SearchUsersRowChangeEventHandler(object sender, procedure_SearchUsersRowChangeEvent e);
@@ -848,7 +883,11 @@ namespace Studio2RotaControl {
             
             private global::System.Data.DataColumn columnLevel;
             
-            private global::System.Data.DataColumn columnTimeslot;
+            private global::System.Data.DataColumn columnDay;
+            
+            private global::System.Data.DataColumn columnStart;
+            
+            private global::System.Data.DataColumn columnFinish;
             
             private global::System.Data.DataColumn columnRoom;
             
@@ -913,9 +952,25 @@ namespace Studio2RotaControl {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TimeslotColumn {
+            public global::System.Data.DataColumn DayColumn {
                 get {
-                    return this.columnTimeslot;
+                    return this.columnDay;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StartColumn {
+                get {
+                    return this.columnStart;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FinishColumn {
+                get {
+                    return this.columnFinish;
                 }
             }
             
@@ -972,13 +1027,15 @@ namespace Studio2RotaControl {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public table_ClassRow Addtable_ClassRow(string Field, int Level, string Timeslot, string Room, int MaxParticipants) {
+            public table_ClassRow Addtable_ClassRow(string Field, int Level, string Day, System.TimeSpan Start, System.TimeSpan Finish, string Room, int MaxParticipants) {
                 table_ClassRow rowtable_ClassRow = ((table_ClassRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Field,
                         Level,
-                        Timeslot,
+                        Day,
+                        Start,
+                        Finish,
                         Room,
                         MaxParticipants};
                 rowtable_ClassRow.ItemArray = columnValuesArray;
@@ -1013,7 +1070,9 @@ namespace Studio2RotaControl {
                 this.columnClassID = base.Columns["ClassID"];
                 this.columnField = base.Columns["Field"];
                 this.columnLevel = base.Columns["Level"];
-                this.columnTimeslot = base.Columns["Timeslot"];
+                this.columnDay = base.Columns["Day"];
+                this.columnStart = base.Columns["Start"];
+                this.columnFinish = base.Columns["Finish"];
                 this.columnRoom = base.Columns["Room"];
                 this.columnMaxParticipants = base.Columns["MaxParticipants"];
             }
@@ -1027,8 +1086,12 @@ namespace Studio2RotaControl {
                 base.Columns.Add(this.columnField);
                 this.columnLevel = new global::System.Data.DataColumn("Level", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLevel);
-                this.columnTimeslot = new global::System.Data.DataColumn("Timeslot", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTimeslot);
+                this.columnDay = new global::System.Data.DataColumn("Day", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDay);
+                this.columnStart = new global::System.Data.DataColumn("Start", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStart);
+                this.columnFinish = new global::System.Data.DataColumn("Finish", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFinish);
                 this.columnRoom = new global::System.Data.DataColumn("Room", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRoom);
                 this.columnMaxParticipants = new global::System.Data.DataColumn("MaxParticipants", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1043,8 +1106,10 @@ namespace Studio2RotaControl {
                 this.columnClassID.Unique = true;
                 this.columnField.AllowDBNull = false;
                 this.columnField.MaxLength = 15;
-                this.columnTimeslot.AllowDBNull = false;
-                this.columnTimeslot.MaxLength = 4;
+                this.columnDay.AllowDBNull = false;
+                this.columnDay.MaxLength = 3;
+                this.columnStart.AllowDBNull = false;
+                this.columnFinish.AllowDBNull = false;
                 this.columnRoom.AllowDBNull = false;
                 this.columnRoom.MaxLength = 10;
             }
@@ -1493,6 +1558,8 @@ namespace Studio2RotaControl {
             
             private global::System.Data.DataColumn columnClassID;
             
+            private global::System.Data.DataColumn columnShift;
+            
             private global::System.Data.DataColumn columnPosition;
             
             private global::System.Data.DataColumn columnReqQualification;
@@ -1545,6 +1612,14 @@ namespace Studio2RotaControl {
             public global::System.Data.DataColumn ClassIDColumn {
                 get {
                     return this.columnClassID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ShiftColumn {
+                get {
+                    return this.columnShift;
                 }
             }
             
@@ -1609,11 +1684,12 @@ namespace Studio2RotaControl {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public table_RoleRow Addtable_RoleRow(table_ClassRow parenttable_ClassRowByFK_table_Role_table_Class, string Position, string ReqQualification, int ReqLevel) {
+            public table_RoleRow Addtable_RoleRow(table_ClassRow parenttable_ClassRowByFK_table_Role_table_Class, string Shift, string Position, string ReqQualification, int ReqLevel) {
                 table_RoleRow rowtable_RoleRow = ((table_RoleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
+                        Shift,
                         Position,
                         ReqQualification,
                         ReqLevel};
@@ -1651,6 +1727,7 @@ namespace Studio2RotaControl {
             internal void InitVars() {
                 this.columnRoleID = base.Columns["RoleID"];
                 this.columnClassID = base.Columns["ClassID"];
+                this.columnShift = base.Columns["Shift"];
                 this.columnPosition = base.Columns["Position"];
                 this.columnReqQualification = base.Columns["ReqQualification"];
                 this.columnReqLevel = base.Columns["ReqLevel"];
@@ -1663,6 +1740,8 @@ namespace Studio2RotaControl {
                 base.Columns.Add(this.columnRoleID);
                 this.columnClassID = new global::System.Data.DataColumn("ClassID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnClassID);
+                this.columnShift = new global::System.Data.DataColumn("Shift", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnShift);
                 this.columnPosition = new global::System.Data.DataColumn("Position", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPosition);
                 this.columnReqQualification = new global::System.Data.DataColumn("ReqQualification", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1677,8 +1756,8 @@ namespace Studio2RotaControl {
                 this.columnRoleID.AllowDBNull = false;
                 this.columnRoleID.ReadOnly = true;
                 this.columnRoleID.Unique = true;
-                this.columnClassID.AllowDBNull = false;
-                this.columnPosition.AllowDBNull = false;
+                this.columnShift.AllowDBNull = false;
+                this.columnShift.MaxLength = 4;
                 this.columnPosition.MaxLength = 25;
                 this.columnReqQualification.MaxLength = 25;
             }
@@ -2177,7 +2256,7 @@ namespace Studio2RotaControl {
                 this.columnPostcode.AllowDBNull = false;
                 this.columnPostcode.MaxLength = 10;
                 this.columnContactNumber.MaxLength = 20;
-                this.columnEmail.MaxLength = 30;
+                this.columnEmail.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2544,6 +2623,254 @@ namespace Studio2RotaControl {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "table_StaffQualificationDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class procedure_GetMaxStaffIDDataTable : global::System.Data.TypedTableBase<procedure_GetMaxStaffIDRow> {
+            
+            private global::System.Data.DataColumn columnColumn1;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public procedure_GetMaxStaffIDDataTable() {
+                this.TableName = "procedure_GetMaxStaffID";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal procedure_GetMaxStaffIDDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected procedure_GetMaxStaffIDDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Column1Column {
+                get {
+                    return this.columnColumn1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public procedure_GetMaxStaffIDRow this[int index] {
+                get {
+                    return ((procedure_GetMaxStaffIDRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event procedure_GetMaxStaffIDRowChangeEventHandler procedure_GetMaxStaffIDRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event procedure_GetMaxStaffIDRowChangeEventHandler procedure_GetMaxStaffIDRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event procedure_GetMaxStaffIDRowChangeEventHandler procedure_GetMaxStaffIDRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event procedure_GetMaxStaffIDRowChangeEventHandler procedure_GetMaxStaffIDRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addprocedure_GetMaxStaffIDRow(procedure_GetMaxStaffIDRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public procedure_GetMaxStaffIDRow Addprocedure_GetMaxStaffIDRow(int Column1) {
+                procedure_GetMaxStaffIDRow rowprocedure_GetMaxStaffIDRow = ((procedure_GetMaxStaffIDRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Column1};
+                rowprocedure_GetMaxStaffIDRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowprocedure_GetMaxStaffIDRow);
+                return rowprocedure_GetMaxStaffIDRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                procedure_GetMaxStaffIDDataTable cln = ((procedure_GetMaxStaffIDDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new procedure_GetMaxStaffIDDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnColumn1 = base.Columns["Column1"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnColumn1 = new global::System.Data.DataColumn("Column1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnColumn1);
+                this.columnColumn1.ReadOnly = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public procedure_GetMaxStaffIDRow Newprocedure_GetMaxStaffIDRow() {
+                return ((procedure_GetMaxStaffIDRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new procedure_GetMaxStaffIDRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(procedure_GetMaxStaffIDRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.procedure_GetMaxStaffIDRowChanged != null)) {
+                    this.procedure_GetMaxStaffIDRowChanged(this, new procedure_GetMaxStaffIDRowChangeEvent(((procedure_GetMaxStaffIDRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.procedure_GetMaxStaffIDRowChanging != null)) {
+                    this.procedure_GetMaxStaffIDRowChanging(this, new procedure_GetMaxStaffIDRowChangeEvent(((procedure_GetMaxStaffIDRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.procedure_GetMaxStaffIDRowDeleted != null)) {
+                    this.procedure_GetMaxStaffIDRowDeleted(this, new procedure_GetMaxStaffIDRowChangeEvent(((procedure_GetMaxStaffIDRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.procedure_GetMaxStaffIDRowDeleting != null)) {
+                    this.procedure_GetMaxStaffIDRowDeleting(this, new procedure_GetMaxStaffIDRowChangeEvent(((procedure_GetMaxStaffIDRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removeprocedure_GetMaxStaffIDRow(procedure_GetMaxStaffIDRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                S2DataStoreDataSet ds = new S2DataStoreDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "procedure_GetMaxStaffIDDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3011,12 +3338,34 @@ namespace Studio2RotaControl {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Timeslot {
+            public string Day {
                 get {
-                    return ((string)(this[this.tabletable_Class.TimeslotColumn]));
+                    return ((string)(this[this.tabletable_Class.DayColumn]));
                 }
                 set {
-                    this[this.tabletable_Class.TimeslotColumn] = value;
+                    this[this.tabletable_Class.DayColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.TimeSpan Start {
+                get {
+                    return ((global::System.TimeSpan)(this[this.tabletable_Class.StartColumn]));
+                }
+                set {
+                    this[this.tabletable_Class.StartColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.TimeSpan Finish {
+                get {
+                    return ((global::System.TimeSpan)(this[this.tabletable_Class.FinishColumn]));
+                }
+                set {
+                    this[this.tabletable_Class.FinishColumn] = value;
                 }
             }
             
@@ -3182,7 +3531,12 @@ namespace Studio2RotaControl {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int ClassID {
                 get {
-                    return ((int)(this[this.tabletable_Role.ClassIDColumn]));
+                    try {
+                        return ((int)(this[this.tabletable_Role.ClassIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClassID\' in table \'table_Role\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tabletable_Role.ClassIDColumn] = value;
@@ -3191,9 +3545,25 @@ namespace Studio2RotaControl {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Shift {
+                get {
+                    return ((string)(this[this.tabletable_Role.ShiftColumn]));
+                }
+                set {
+                    this[this.tabletable_Role.ShiftColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Position {
                 get {
-                    return ((string)(this[this.tabletable_Role.PositionColumn]));
+                    try {
+                        return ((string)(this[this.tabletable_Role.PositionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Position\' in table \'table_Role\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tabletable_Role.PositionColumn] = value;
@@ -3241,6 +3611,30 @@ namespace Studio2RotaControl {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_table_Role_table_Class"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsClassIDNull() {
+                return this.IsNull(this.tabletable_Role.ClassIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetClassIDNull() {
+                this[this.tabletable_Role.ClassIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPositionNull() {
+                return this.IsNull(this.tabletable_Role.PositionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPositionNull() {
+                this[this.tabletable_Role.PositionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3594,6 +3988,49 @@ namespace Studio2RotaControl {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class procedure_GetMaxStaffIDRow : global::System.Data.DataRow {
+            
+            private procedure_GetMaxStaffIDDataTable tableprocedure_GetMaxStaffID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal procedure_GetMaxStaffIDRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableprocedure_GetMaxStaffID = ((procedure_GetMaxStaffIDDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Column1 {
+                get {
+                    try {
+                        return ((int)(this[this.tableprocedure_GetMaxStaffID.Column1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Column1\' in table \'procedure_GetMaxStaffID\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableprocedure_GetMaxStaffID.Column1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsColumn1Null() {
+                return this.IsNull(this.tableprocedure_GetMaxStaffID.Column1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetColumn1Null() {
+                this[this.tableprocedure_GetMaxStaffID.Column1Column] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
         public partial class procedure_SearchUsersRow : global::System.Data.DataRow {
             
             private procedure_SearchUsersDataTable tableprocedure_SearchUsers;
@@ -3818,6 +4255,40 @@ namespace Studio2RotaControl {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public table_StaffQualificationRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class procedure_GetMaxStaffIDRowChangeEvent : global::System.EventArgs {
+            
+            private procedure_GetMaxStaffIDRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public procedure_GetMaxStaffIDRowChangeEvent(procedure_GetMaxStaffIDRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public procedure_GetMaxStaffIDRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -4344,47 +4815,57 @@ SELECT AbsenceID, StaffID, StartDate, EndDate, Reason FROM table_Absence WHERE (
             tableMapping.ColumnMappings.Add("ClassID", "ClassID");
             tableMapping.ColumnMappings.Add("Field", "Field");
             tableMapping.ColumnMappings.Add("Level", "Level");
-            tableMapping.ColumnMappings.Add("Timeslot", "Timeslot");
+            tableMapping.ColumnMappings.Add("Day", "Day");
+            tableMapping.ColumnMappings.Add("Start", "Start");
+            tableMapping.ColumnMappings.Add("Finish", "Finish");
             tableMapping.ColumnMappings.Add("Room", "Room");
             tableMapping.ColumnMappings.Add("MaxParticipants", "MaxParticipants");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[table_Class] WHERE (([ClassID] = @Original_ClassID) AND ([Field] = @Original_Field) AND ((@IsNull_Level = 1 AND [Level] IS NULL) OR ([Level] = @Original_Level)) AND ([Timeslot] = @Original_Timeslot) AND ([Room] = @Original_Room) AND ((@IsNull_MaxParticipants = 1 AND [MaxParticipants] IS NULL) OR ([MaxParticipants] = @Original_MaxParticipants)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[table_Class] WHERE (([ClassID] = @Original_ClassID) AND ([Field] = @Original_Field) AND ((@IsNull_Level = 1 AND [Level] IS NULL) OR ([Level] = @Original_Level)) AND ([Day] = @Original_Day) AND ([Start] = @Original_Start) AND ([Finish] = @Original_Finish) AND ([Room] = @Original_Room) AND ((@IsNull_MaxParticipants = 1 AND [MaxParticipants] IS NULL) OR ([MaxParticipants] = @Original_MaxParticipants)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClassID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClassID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Field", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Field", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Level", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Level", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Level", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Level", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Timeslot", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Timeslot", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Day", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Day", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Start", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Start", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Finish", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Finish", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Room", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Room", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MaxParticipants", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaxParticipants", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MaxParticipants", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaxParticipants", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[table_Class] ([Field], [Level], [Timeslot], [Room], [MaxParticipants]) VALUES (@Field, @Level, @Timeslot, @Room, @MaxParticipants);
-SELECT ClassID, Field, Level, Timeslot, Room, MaxParticipants FROM table_Class WHERE (ClassID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[table_Class] ([Field], [Level], [Day], [Start], [Finish], [Room], [MaxParticipants]) VALUES (@Field, @Level, @Day, @Start, @Finish, @Room, @MaxParticipants);
+SELECT ClassID, Field, Level, Day, Start, Finish, Room, MaxParticipants FROM table_Class WHERE (ClassID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Field", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Field", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Level", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Level", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Timeslot", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Timeslot", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Day", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Day", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Start", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Start", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Finish", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Finish", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Room", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Room", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaxParticipants", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaxParticipants", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[table_Class] SET [Field] = @Field, [Level] = @Level, [Timeslot] = @Timeslot, [Room] = @Room, [MaxParticipants] = @MaxParticipants WHERE (([ClassID] = @Original_ClassID) AND ([Field] = @Original_Field) AND ((@IsNull_Level = 1 AND [Level] IS NULL) OR ([Level] = @Original_Level)) AND ([Timeslot] = @Original_Timeslot) AND ([Room] = @Original_Room) AND ((@IsNull_MaxParticipants = 1 AND [MaxParticipants] IS NULL) OR ([MaxParticipants] = @Original_MaxParticipants)));
-SELECT ClassID, Field, Level, Timeslot, Room, MaxParticipants FROM table_Class WHERE (ClassID = @ClassID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[table_Class] SET [Field] = @Field, [Level] = @Level, [Day] = @Day, [Start] = @Start, [Finish] = @Finish, [Room] = @Room, [MaxParticipants] = @MaxParticipants WHERE (([ClassID] = @Original_ClassID) AND ([Field] = @Original_Field) AND ((@IsNull_Level = 1 AND [Level] IS NULL) OR ([Level] = @Original_Level)) AND ([Day] = @Original_Day) AND ([Start] = @Original_Start) AND ([Finish] = @Original_Finish) AND ([Room] = @Original_Room) AND ((@IsNull_MaxParticipants = 1 AND [MaxParticipants] IS NULL) OR ([MaxParticipants] = @Original_MaxParticipants)));
+SELECT ClassID, Field, Level, Day, Start, Finish, Room, MaxParticipants FROM table_Class WHERE (ClassID = @ClassID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Field", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Field", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Level", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Level", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Timeslot", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Timeslot", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Day", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Day", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Start", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Start", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Finish", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Finish", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Room", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Room", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaxParticipants", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaxParticipants", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClassID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClassID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Field", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Field", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Level", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Level", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Level", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Level", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Timeslot", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Timeslot", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Day", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Day", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Start", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Start", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Finish", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Finish", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Room", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Room", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MaxParticipants", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaxParticipants", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MaxParticipants", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaxParticipants", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4401,12 +4882,18 @@ SELECT ClassID, Field, Level, Timeslot, Room, MaxParticipants FROM table_Class W
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ClassID, Field, [Level], Timeslot, Room, MaxParticipants FROM dbo.table_Cl" +
-                "ass";
+            this._commandCollection[0].CommandText = "SELECT ClassID, Field, [Level], Day, Start, Finish, Room, MaxParticipants FROM db" +
+                "o.table_Class";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT ClassID, Field, [Level], Day, Start, Finish, Room, MaxParticipants FROM db" +
+                "o.table_Class WHERE (Field = (SELECT DISTINCT Field AS tempField FROM dbo.table_" +
+                "Class AS tempTable))";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4431,6 +4918,19 @@ SELECT ClassID, Field, Level, Timeslot, Room, MaxParticipants FROM table_Class W
             S2DataStoreDataSet.table_ClassDataTable dataTable = new S2DataStoreDataSet.table_ClassDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int query_SelectDistinctField(S2DataStoreDataSet.table_ClassDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4466,7 +4966,7 @@ SELECT ClassID, Field, Level, Timeslot, Room, MaxParticipants FROM table_Class W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ClassID, string Original_Field, global::System.Nullable<int> Original_Level, string Original_Timeslot, string Original_Room, global::System.Nullable<int> Original_MaxParticipants) {
+        public virtual int Delete(int Original_ClassID, string Original_Field, global::System.Nullable<int> Original_Level, string Original_Day, System.TimeSpan Original_Start, System.TimeSpan Original_Finish, string Original_Room, global::System.Nullable<int> Original_MaxParticipants) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ClassID));
             if ((Original_Field == null)) {
                 throw new global::System.ArgumentNullException("Original_Field");
@@ -4482,25 +4982,27 @@ SELECT ClassID, Field, Level, Timeslot, Room, MaxParticipants FROM table_Class W
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Original_Timeslot == null)) {
-                throw new global::System.ArgumentNullException("Original_Timeslot");
+            if ((Original_Day == null)) {
+                throw new global::System.ArgumentNullException("Original_Day");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Timeslot));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Day));
             }
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((System.TimeSpan)(Original_Start));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((System.TimeSpan)(Original_Finish));
             if ((Original_Room == null)) {
                 throw new global::System.ArgumentNullException("Original_Room");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Room));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_Room));
             }
             if ((Original_MaxParticipants.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_MaxParticipants.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_MaxParticipants.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4522,7 +5024,7 @@ SELECT ClassID, Field, Level, Timeslot, Room, MaxParticipants FROM table_Class W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Field, global::System.Nullable<int> Level, string Timeslot, string Room, global::System.Nullable<int> MaxParticipants) {
+        public virtual int Insert(string Field, global::System.Nullable<int> Level, string Day, System.TimeSpan Start, System.TimeSpan Finish, string Room, global::System.Nullable<int> MaxParticipants) {
             if ((Field == null)) {
                 throw new global::System.ArgumentNullException("Field");
             }
@@ -4535,23 +5037,25 @@ SELECT ClassID, Field, Level, Timeslot, Room, MaxParticipants FROM table_Class W
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((Timeslot == null)) {
-                throw new global::System.ArgumentNullException("Timeslot");
+            if ((Day == null)) {
+                throw new global::System.ArgumentNullException("Day");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Timeslot));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Day));
             }
+            this.Adapter.InsertCommand.Parameters[3].Value = ((System.TimeSpan)(Start));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((System.TimeSpan)(Finish));
             if ((Room == null)) {
                 throw new global::System.ArgumentNullException("Room");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Room));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Room));
             }
             if ((MaxParticipants.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(MaxParticipants.Value));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(MaxParticipants.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4573,7 +5077,23 @@ SELECT ClassID, Field, Level, Timeslot, Room, MaxParticipants FROM table_Class W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Field, global::System.Nullable<int> Level, string Timeslot, string Room, global::System.Nullable<int> MaxParticipants, int Original_ClassID, string Original_Field, global::System.Nullable<int> Original_Level, string Original_Timeslot, string Original_Room, global::System.Nullable<int> Original_MaxParticipants, int ClassID) {
+        public virtual int Update(
+                    string Field, 
+                    global::System.Nullable<int> Level, 
+                    string Day, 
+                    System.TimeSpan Start, 
+                    System.TimeSpan Finish, 
+                    string Room, 
+                    global::System.Nullable<int> MaxParticipants, 
+                    int Original_ClassID, 
+                    string Original_Field, 
+                    global::System.Nullable<int> Original_Level, 
+                    string Original_Day, 
+                    System.TimeSpan Original_Start, 
+                    System.TimeSpan Original_Finish, 
+                    string Original_Room, 
+                    global::System.Nullable<int> Original_MaxParticipants, 
+                    int ClassID) {
             if ((Field == null)) {
                 throw new global::System.ArgumentNullException("Field");
             }
@@ -4586,60 +5106,64 @@ SELECT ClassID, Field, Level, Timeslot, Room, MaxParticipants FROM table_Class W
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((Timeslot == null)) {
-                throw new global::System.ArgumentNullException("Timeslot");
+            if ((Day == null)) {
+                throw new global::System.ArgumentNullException("Day");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Timeslot));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Day));
             }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.TimeSpan)(Start));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.TimeSpan)(Finish));
             if ((Room == null)) {
                 throw new global::System.ArgumentNullException("Room");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Room));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Room));
             }
             if ((MaxParticipants.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(MaxParticipants.Value));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(MaxParticipants.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ClassID));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ClassID));
             if ((Original_Field == null)) {
                 throw new global::System.ArgumentNullException("Original_Field");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Field));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Field));
             }
             if ((Original_Level.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Level.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Level.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_Timeslot == null)) {
-                throw new global::System.ArgumentNullException("Original_Timeslot");
+            if ((Original_Day == null)) {
+                throw new global::System.ArgumentNullException("Original_Day");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Timeslot));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Day));
             }
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.TimeSpan)(Original_Start));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.TimeSpan)(Original_Finish));
             if ((Original_Room == null)) {
                 throw new global::System.ArgumentNullException("Original_Room");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Room));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Room));
             }
             if ((Original_MaxParticipants.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_MaxParticipants.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_MaxParticipants.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(ClassID));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(ClassID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4660,8 +5184,8 @@ SELECT ClassID, Field, Level, Timeslot, Room, MaxParticipants FROM table_Class W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Field, global::System.Nullable<int> Level, string Timeslot, string Room, global::System.Nullable<int> MaxParticipants, int Original_ClassID, string Original_Field, global::System.Nullable<int> Original_Level, string Original_Timeslot, string Original_Room, global::System.Nullable<int> Original_MaxParticipants) {
-            return this.Update(Field, Level, Timeslot, Room, MaxParticipants, Original_ClassID, Original_Field, Original_Level, Original_Timeslot, Original_Room, Original_MaxParticipants, Original_ClassID);
+        public virtual int Update(string Field, global::System.Nullable<int> Level, string Day, System.TimeSpan Start, System.TimeSpan Finish, string Room, global::System.Nullable<int> MaxParticipants, int Original_ClassID, string Original_Field, global::System.Nullable<int> Original_Level, string Original_Day, System.TimeSpan Original_Start, System.TimeSpan Original_Finish, string Original_Room, global::System.Nullable<int> Original_MaxParticipants) {
+            return this.Update(Field, Level, Day, Start, Finish, Room, MaxParticipants, Original_ClassID, Original_Field, Original_Level, Original_Day, Original_Start, Original_Finish, Original_Room, Original_MaxParticipants, Original_ClassID);
         }
     }
     
@@ -5145,16 +5669,20 @@ SELECT QualificationID, Name, Field, Level FROM table_Qualification WHERE (Quali
             tableMapping.DataSetTable = "table_Role";
             tableMapping.ColumnMappings.Add("RoleID", "RoleID");
             tableMapping.ColumnMappings.Add("ClassID", "ClassID");
+            tableMapping.ColumnMappings.Add("Shift", "Shift");
             tableMapping.ColumnMappings.Add("Position", "Position");
             tableMapping.ColumnMappings.Add("ReqQualification", "ReqQualification");
             tableMapping.ColumnMappings.Add("ReqLevel", "ReqLevel");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[table_Role] WHERE (([RoleID] = @Original_RoleID) AND ([ClassID] = @Original_ClassID) AND ([Position] = @Original_Position) AND ((@IsNull_ReqQualification = 1 AND [ReqQualification] IS NULL) OR ([ReqQualification] = @Original_ReqQualification)) AND ((@IsNull_ReqLevel = 1 AND [ReqLevel] IS NULL) OR ([ReqLevel] = @Original_ReqLevel)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[table_Role] WHERE (([RoleID] = @Original_RoleID) AND ((@IsNull_ClassID = 1 AND [ClassID] IS NULL) OR ([ClassID] = @Original_ClassID)) AND ([Shift] = @Original_Shift) AND ((@IsNull_Position = 1 AND [Position] IS NULL) OR ([Position] = @Original_Position)) AND ((@IsNull_ReqQualification = 1 AND [ReqQualification] IS NULL) OR ([ReqQualification] = @Original_ReqQualification)) AND ((@IsNull_ReqLevel = 1 AND [ReqLevel] IS NULL) OR ([ReqLevel] = @Original_ReqLevel)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RoleID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoleID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ClassID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClassID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClassID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClassID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shift", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shift", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Position", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Position", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Position", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Position", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ReqQualification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReqQualification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReqQualification", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReqQualification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -5162,24 +5690,29 @@ SELECT QualificationID, Name, Field, Level FROM table_Qualification WHERE (Quali
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReqLevel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReqLevel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[table_Role] ([ClassID], [Position], [ReqQualification], [ReqLevel]) VALUES (@ClassID, @Position, @ReqQualification, @ReqLevel);
-SELECT RoleID, ClassID, Position, ReqQualification, ReqLevel FROM table_Role WHERE (RoleID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[table_Role] ([ClassID], [Shift], [Position], [ReqQualification], [ReqLevel]) VALUES (@ClassID, @Shift, @Position, @ReqQualification, @ReqLevel);
+SELECT RoleID, ClassID, Shift, Position, ReqQualification, ReqLevel FROM table_Role WHERE (RoleID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClassID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClassID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shift", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shift", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Position", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Position", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReqQualification", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReqQualification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReqLevel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReqLevel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[table_Role] SET [ClassID] = @ClassID, [Position] = @Position, [ReqQualification] = @ReqQualification, [ReqLevel] = @ReqLevel WHERE (([RoleID] = @Original_RoleID) AND ([ClassID] = @Original_ClassID) AND ([Position] = @Original_Position) AND ((@IsNull_ReqQualification = 1 AND [ReqQualification] IS NULL) OR ([ReqQualification] = @Original_ReqQualification)) AND ((@IsNull_ReqLevel = 1 AND [ReqLevel] IS NULL) OR ([ReqLevel] = @Original_ReqLevel)));
-SELECT RoleID, ClassID, Position, ReqQualification, ReqLevel FROM table_Role WHERE (RoleID = @RoleID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[table_Role] SET [ClassID] = @ClassID, [Shift] = @Shift, [Position] = @Position, [ReqQualification] = @ReqQualification, [ReqLevel] = @ReqLevel WHERE (([RoleID] = @Original_RoleID) AND ((@IsNull_ClassID = 1 AND [ClassID] IS NULL) OR ([ClassID] = @Original_ClassID)) AND ([Shift] = @Original_Shift) AND ((@IsNull_Position = 1 AND [Position] IS NULL) OR ([Position] = @Original_Position)) AND ((@IsNull_ReqQualification = 1 AND [ReqQualification] IS NULL) OR ([ReqQualification] = @Original_ReqQualification)) AND ((@IsNull_ReqLevel = 1 AND [ReqLevel] IS NULL) OR ([ReqLevel] = @Original_ReqLevel)));
+SELECT RoleID, ClassID, Shift, Position, ReqQualification, ReqLevel FROM table_Role WHERE (RoleID = @RoleID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClassID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClassID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shift", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shift", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Position", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Position", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReqQualification", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReqQualification", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReqLevel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReqLevel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RoleID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoleID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ClassID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClassID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClassID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClassID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shift", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shift", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Position", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Position", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Position", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Position", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ReqQualification", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReqQualification", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReqQualification", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReqQualification", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -5201,7 +5734,8 @@ SELECT RoleID, ClassID, Position, ReqQualification, ReqLevel FROM table_Role WHE
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT RoleID, ClassID, Position, ReqQualification, ReqLevel FROM dbo.table_Role";
+            this._commandCollection[0].CommandText = "SELECT RoleID, ClassID, Shift, Position, ReqQualification, ReqLevel FROM dbo.tabl" +
+                "e_Role";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5262,30 +5796,45 @@ SELECT RoleID, ClassID, Position, ReqQualification, ReqLevel FROM table_Role WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_RoleID, int Original_ClassID, string Original_Position, string Original_ReqQualification, global::System.Nullable<int> Original_ReqLevel) {
+        public virtual int Delete(int Original_RoleID, global::System.Nullable<int> Original_ClassID, string Original_Shift, string Original_Position, string Original_ReqQualification, global::System.Nullable<int> Original_ReqLevel) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_RoleID));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_ClassID));
-            if ((Original_Position == null)) {
-                throw new global::System.ArgumentNullException("Original_Position");
+            if ((Original_ClassID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_ClassID.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Position));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Shift == null)) {
+                throw new global::System.ArgumentNullException("Original_Shift");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Shift));
+            }
+            if ((Original_Position == null)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Position));
             }
             if ((Original_ReqQualification == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_ReqQualification));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_ReqQualification));
             }
             if ((Original_ReqLevel.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_ReqLevel.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_ReqLevel.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5307,25 +5856,36 @@ SELECT RoleID, ClassID, Position, ReqQualification, ReqLevel FROM table_Role WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ClassID, string Position, string ReqQualification, global::System.Nullable<int> ReqLevel) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ClassID));
-            if ((Position == null)) {
-                throw new global::System.ArgumentNullException("Position");
+        public virtual int Insert(global::System.Nullable<int> ClassID, string Shift, string Position, string ReqQualification, global::System.Nullable<int> ReqLevel) {
+            if ((ClassID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ClassID.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Position));
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((ReqQualification == null)) {
+            if ((Shift == null)) {
+                throw new global::System.ArgumentNullException("Shift");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Shift));
+            }
+            if ((Position == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(ReqQualification));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Position));
             }
-            if ((ReqLevel.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(ReqLevel.Value));
+            if ((ReqQualification == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(ReqQualification));
+            }
+            if ((ReqLevel.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(ReqLevel.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5347,51 +5907,77 @@ SELECT RoleID, ClassID, Position, ReqQualification, ReqLevel FROM table_Role WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ClassID, string Position, string ReqQualification, global::System.Nullable<int> ReqLevel, int Original_RoleID, int Original_ClassID, string Original_Position, string Original_ReqQualification, global::System.Nullable<int> Original_ReqLevel, int RoleID) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ClassID));
-            if ((Position == null)) {
-                throw new global::System.ArgumentNullException("Position");
+        public virtual int Update(global::System.Nullable<int> ClassID, string Shift, string Position, string ReqQualification, global::System.Nullable<int> ReqLevel, int Original_RoleID, global::System.Nullable<int> Original_ClassID, string Original_Shift, string Original_Position, string Original_ReqQualification, global::System.Nullable<int> Original_ReqLevel, int RoleID) {
+            if ((ClassID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ClassID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Position));
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((ReqQualification == null)) {
+            if ((Shift == null)) {
+                throw new global::System.ArgumentNullException("Shift");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Shift));
+            }
+            if ((Position == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(ReqQualification));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Position));
             }
-            if ((ReqLevel.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(ReqLevel.Value));
-            }
-            else {
+            if ((ReqQualification == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_RoleID));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ClassID));
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(ReqQualification));
+            }
+            if ((ReqLevel.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ReqLevel.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_RoleID));
+            if ((Original_ClassID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ClassID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Shift == null)) {
+                throw new global::System.ArgumentNullException("Original_Shift");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Shift));
+            }
             if ((Original_Position == null)) {
-                throw new global::System.ArgumentNullException("Original_Position");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Position));
-            }
-            if ((Original_ReqQualification == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_ReqQualification));
-            }
-            if ((Original_ReqLevel.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_ReqLevel.Value));
-            }
-            else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(RoleID));
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Position));
+            }
+            if ((Original_ReqQualification == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_ReqQualification));
+            }
+            if ((Original_ReqLevel.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_ReqLevel.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(RoleID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5412,8 +5998,8 @@ SELECT RoleID, ClassID, Position, ReqQualification, ReqLevel FROM table_Role WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ClassID, string Position, string ReqQualification, global::System.Nullable<int> ReqLevel, int Original_RoleID, int Original_ClassID, string Original_Position, string Original_ReqQualification, global::System.Nullable<int> Original_ReqLevel) {
-            return this.Update(ClassID, Position, ReqQualification, ReqLevel, Original_RoleID, Original_ClassID, Original_Position, Original_ReqQualification, Original_ReqLevel, Original_RoleID);
+        public virtual int Update(global::System.Nullable<int> ClassID, string Shift, string Position, string ReqQualification, global::System.Nullable<int> ReqLevel, int Original_RoleID, global::System.Nullable<int> Original_ClassID, string Original_Shift, string Original_Position, string Original_ReqQualification, global::System.Nullable<int> Original_ReqLevel) {
+            return this.Update(ClassID, Shift, Position, ReqQualification, ReqLevel, Original_RoleID, Original_ClassID, Original_Shift, Original_Position, Original_ReqQualification, Original_ReqLevel, Original_RoleID);
         }
     }
     
@@ -6508,6 +7094,174 @@ SELECT StaffID, QualificationID FROM table_StaffQualification WHERE (Qualificati
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class procedure_GetMaxStaffIDTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public procedure_GetMaxStaffIDTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "procedure_GetMaxStaffID";
+            tableMapping.ColumnMappings.Add("Column1", "Column1");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Studio2RotaControl.Properties.Settings.Default.S2DataStoreConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.procedure_GetMaxStaffID";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(S2DataStoreDataSet.procedure_GetMaxStaffIDDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual S2DataStoreDataSet.procedure_GetMaxStaffIDDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            S2DataStoreDataSet.procedure_GetMaxStaffIDDataTable dataTable = new S2DataStoreDataSet.procedure_GetMaxStaffIDDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class procedure_SearchUsersTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -6741,7 +7495,7 @@ SELECT StaffID, QualificationID FROM table_StaffQualification WHERE (Qualificati
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@City", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Postcode", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ContactNumber", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Studio2RotaControl.Properties.Settings.Default.S2DataStoreConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).CommandText = "dbo.procedure_AddStaffQualification";

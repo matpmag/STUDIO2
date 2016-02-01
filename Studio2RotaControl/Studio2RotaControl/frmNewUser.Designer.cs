@@ -159,20 +159,21 @@
             this.btnPassword.TabIndex = 1;
             this.btnPassword.Text = "Change Password";
             this.btnPassword.UseVisualStyleBackColor = true;
+            this.btnPassword.Click += new System.EventHandler(this.btnPassword_Click);
             // 
             // tblProfileQualification
             // 
             this.tblProfileQualification.ColumnCount = 1;
             this.tblProfileQualification.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblProfileQualification.Controls.Add(this.gbxProfile, 0, 0);
-            this.tblProfileQualification.Controls.Add(this.tblQualifications, 0, 1);
+            this.tblProfileQualification.Controls.Add(this.gbxProfile, 0, 1);
+            this.tblProfileQualification.Controls.Add(this.tblQualifications, 0, 0);
             this.tblProfileQualification.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblProfileQualification.Location = new System.Drawing.Point(398, 23);
             this.tblProfileQualification.Name = "tblProfileQualification";
             this.tblProfileQualification.RowCount = 2;
             this.tblEdit.SetRowSpan(this.tblProfileQualification, 2);
-            this.tblProfileQualification.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.9868F));
-            this.tblProfileQualification.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.0132F));
+            this.tblProfileQualification.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.26791F));
+            this.tblProfileQualification.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.73209F));
             this.tblProfileQualification.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblProfileQualification.Size = new System.Drawing.Size(440, 321);
             this.tblProfileQualification.TabIndex = 12;
@@ -182,9 +183,9 @@
             this.gbxProfile.Controls.Add(this.tblProfile);
             this.gbxProfile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxProfile.Location = new System.Drawing.Point(3, 3);
+            this.gbxProfile.Location = new System.Drawing.Point(3, 113);
             this.gbxProfile.Name = "gbxProfile";
-            this.gbxProfile.Size = new System.Drawing.Size(434, 212);
+            this.gbxProfile.Size = new System.Drawing.Size(434, 205);
             this.gbxProfile.TabIndex = 2;
             this.gbxProfile.TabStop = false;
             this.gbxProfile.Text = "Profile";
@@ -214,7 +215,7 @@
             this.tblProfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblProfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblProfile.Size = new System.Drawing.Size(428, 187);
+            this.tblProfile.Size = new System.Drawing.Size(428, 180);
             this.tblProfile.TabIndex = 0;
             // 
             // floGender
@@ -322,7 +323,7 @@
             this.lblDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.lblDOB.Location = new System.Drawing.Point(3, 134);
             this.lblDOB.Name = "lblDOB";
-            this.lblDOB.Size = new System.Drawing.Size(105, 53);
+            this.lblDOB.Size = new System.Drawing.Size(105, 46);
             this.lblDOB.TabIndex = 13;
             this.lblDOB.Text = "Birth date:";
             // 
@@ -357,13 +358,13 @@
             this.tblQualifications.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblQualifications.Controls.Add(this.btnQualifications, 1, 1);
             this.tblQualifications.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblQualifications.Location = new System.Drawing.Point(3, 221);
+            this.tblQualifications.Location = new System.Drawing.Point(3, 3);
             this.tblQualifications.Name = "tblQualifications";
             this.tblQualifications.RowCount = 3;
             this.tblQualifications.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblQualifications.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tblQualifications.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblQualifications.Size = new System.Drawing.Size(434, 97);
+            this.tblQualifications.Size = new System.Drawing.Size(434, 104);
             this.tblQualifications.TabIndex = 3;
             // 
             // btnQualifications
@@ -372,7 +373,7 @@
             this.btnQualifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.btnQualifications.Location = new System.Drawing.Point(23, 23);
             this.btnQualifications.Name = "btnQualifications";
-            this.btnQualifications.Size = new System.Drawing.Size(388, 51);
+            this.btnQualifications.Size = new System.Drawing.Size(388, 58);
             this.btnQualifications.TabIndex = 0;
             this.btnQualifications.Text = "Manage Qualifications";
             this.btnQualifications.UseVisualStyleBackColor = true;
@@ -425,6 +426,11 @@
             this.cbxRole.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbxRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.cbxRole.FormattingEnabled = true;
+            this.cbxRole.Items.AddRange(new object[] {
+            "Manager",
+            "Assistant Manager",
+            "Receptionist",
+            "Staff"});
             this.cbxRole.Location = new System.Drawing.Point(107, 3);
             this.cbxRole.Name = "cbxRole";
             this.cbxRole.Size = new System.Drawing.Size(253, 28);
@@ -710,6 +716,7 @@
             this.btnDiscard.TabIndex = 1;
             this.btnDiscard.Text = "Discard Changes";
             this.btnDiscard.UseVisualStyleBackColor = true;
+            this.btnDiscard.Click += new System.EventHandler(this.btnDiscard_Click);
             // 
             // frmNewUser
             // 
@@ -788,7 +795,6 @@
         private System.Windows.Forms.Label lblCity;
         private System.Windows.Forms.TextBox tbxCity;
         private System.Windows.Forms.Label lblPostcode;
-        private System.Windows.Forms.TextBox tbxPostcode;
         private System.Windows.Forms.Label lblContactNo;
         private System.Windows.Forms.TextBox tbxContactNo;
         private System.Windows.Forms.Label lblEmail;
@@ -796,5 +802,6 @@
         private System.Windows.Forms.TableLayoutPanel tblExit;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDiscard;
+        private System.Windows.Forms.TextBox tbxPostcode;
     }
 }

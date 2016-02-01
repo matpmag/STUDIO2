@@ -134,7 +134,7 @@
             this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.61465F));
             this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.38535F));
             this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tblSearch.Controls.Add(this.lblSearch, 1, 1);
             this.tblSearch.Controls.Add(this.lblSearchProperty, 1, 2);
             this.tblSearch.Controls.Add(this.lblSearchValue, 1, 3);
@@ -194,7 +194,7 @@
             this.lbxResults.ItemHeight = 20;
             this.lbxResults.Location = new System.Drawing.Point(23, 129);
             this.lbxResults.Name = "lbxResults";
-            this.lbxResults.Size = new System.Drawing.Size(730, 125);
+            this.lbxResults.Size = new System.Drawing.Size(728, 125);
             this.lbxResults.TabIndex = 3;
             // 
             // cbxProperty
@@ -203,7 +203,7 @@
             this.cbxProperty.DataSource = this.tableStaffBindingSource;
             this.cbxProperty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.cbxProperty.FormattingEnabled = true;
-            this.cbxProperty.Location = new System.Drawing.Point(244, 56);
+            this.cbxProperty.Location = new System.Drawing.Point(243, 56);
             this.cbxProperty.Name = "cbxProperty";
             this.cbxProperty.Size = new System.Drawing.Size(255, 28);
             this.cbxProperty.TabIndex = 5;
@@ -222,7 +222,7 @@
             // 
             this.tblSearch.SetColumnSpan(this.tbxValue, 2);
             this.tbxValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.tbxValue.Location = new System.Drawing.Point(244, 92);
+            this.tbxValue.Location = new System.Drawing.Point(243, 92);
             this.tbxValue.Name = "tbxValue";
             this.tbxValue.Size = new System.Drawing.Size(255, 26);
             this.tbxValue.TabIndex = 6;
@@ -230,7 +230,7 @@
             // btnHideEdit
             // 
             this.btnHideEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHideEdit.Location = new System.Drawing.Point(723, 260);
+            this.btnHideEdit.Location = new System.Drawing.Point(721, 260);
             this.btnHideEdit.Name = "btnHideEdit";
             this.btnHideEdit.Size = new System.Drawing.Size(30, 26);
             this.btnHideEdit.TabIndex = 7;
@@ -854,6 +854,7 @@
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Save Changes";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDiscard
             // 
@@ -866,6 +867,7 @@
             this.btnDiscard.TabIndex = 1;
             this.btnDiscard.Text = "Discard Changes";
             this.btnDiscard.UseVisualStyleBackColor = true;
+            this.btnDiscard.Click += new System.EventHandler(this.btnDiscard_Click);
             // 
             // table_StaffTableAdapter
             // 

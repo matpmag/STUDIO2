@@ -20,15 +20,7 @@ namespace Studio2RotaControl
 
         #region Methods
 
-        private void btnLogIn_Click(object sender, EventArgs e)
-        {
-            if (tbxUsername.Text != "" && tbxPassword.Text != "")
-            {
-                searchUsers(tbxUsername.Text, tbxPassword.Text);
-            }
-        }
-
-        private void searchUsers(string username, string password)
+        private bool searchUsers(string username, string password)
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["S2DataStore.ConnectionString"].ConnectionString))
             {
@@ -51,6 +43,7 @@ namespace Studio2RotaControl
                                     classSessionStorage.Username = dr[0].ToString();
                                     classSessionStorage.PermLevel = int.Parse(dr[1].ToString());
                                 }
+                                return true;
                             }
                             else
                             {
@@ -58,35 +51,43 @@ namespace Studio2RotaControl
                             }
                         }
                     }
+                    return false;
                 }
                 catch
                 {
                     MessageBox.Show("There has been an error in the execution of this command, please retry", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
                 }
             }
         }
 
         private void tbxPassword_Enter(object sender, EventArgs e)
         {
+            if (tbxPassword.Text == "Password")
+            {
+                tbxPassword.Text = "";
+            }
             tbxPassword.ForeColor = SystemColors.WindowText;
-            tbxPassword.Text = "";
             tbxPassword.UseSystemPasswordChar = true;
         }
 
         private void tbxPassword_Leave(object sender, EventArgs e)
         {
-            if (tbxPassword.Text == "")
+            if(tbxPassword.Text == "")
             {
-                tbxUsername.Text = "Password";
+                tbxPassword.Text = "Password";
+                tbxPassword.ForeColor = Color.DarkGray;
                 tbxPassword.UseSystemPasswordChar = false;
-                tbxUsername.ForeColor = Color.DarkGray;
             }
         }
 
         private void tbxUsername_Enter(object sender, EventArgs e)
         {
-            tbxUsername.ForeColor = SystemColors.WindowText;
-            tbxUsername.Text = "";
+            if (tbxUsername.Text == "StaffID")
+            {
+                tbxUsername.ForeColor = SystemColors.WindowText;
+                tbxUsername.Text = "";
+            }
         }
 
         private void tbxUsername_KeyPress(object sender, KeyPressEventArgs e)
@@ -98,11 +99,57 @@ namespace Studio2RotaControl
         {
             if (tbxUsername.Text == "")
             {
-                tbxUsername.Text = "Username";
+                tbxUsername.Text = "StaffID";
                 tbxUsername.ForeColor = Color.DarkGray;
             }
         }
 
         #endregion Methods
+
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            if (searchUsers(tbxUsername.Text, tbxPassword.Text))
+            {
+                if (classSessionStorage.PermLevel == 1)
+                {
+                    Form frmViewRota = new frmRotaControl(editable: false);
+                    frmViewRota.Show();
+                    Close();
+                    //tblMenu.Visible = false;
+                }
+                else
+                {
+                    tblMenu.Visible = true;
+                }
+            }
+        }
+
+        private void btnAddStaff_Click(object sender, EventArgs e)
+        {
+            Form frmNewUser = new frmNewUser();
+            frmNewUser.Show();
+            Close();
+        }
+
+        private void btnViewRota_Click(object sender, EventArgs e)
+        {
+            Form frmViewRota = new frmRotaControl(editable: false);
+            frmViewRota.Show();
+            Close();
+        }
+
+        private void btnAmmendRota_Click(object sender, EventArgs e)
+        {
+            Form frmViewRota = new frmRotaControl(editable: true);
+            frmViewRota.Show();
+            Close();
+        }
+
+        private void btnManageStaff_Click(object sender, EventArgs e)
+        {
+            Form frmEditUser = new frmUserManagement();
+            frmEditUser.Show();
+            Close();
+        }
     }
 }

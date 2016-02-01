@@ -66,6 +66,18 @@
     <Compile Include="frmNewUser.Designer.cs">
       <DependentUpon>frmNewUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPasswordSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPasswordSet.Designer.cs">
+      <DependentUpon>frmPasswordSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRotaControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRotaControl.Designer.cs">
+      <DependentUpon>frmRotaControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +105,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNewUser.resx">
       <DependentUpon>frmNewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPasswordSet.resx">
+      <DependentUpon>frmPasswordSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRotaControl.resx">
+      <DependentUpon>frmRotaControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStart.resx">
       <DependentUpon>frmStart.cs</DependentUpon>

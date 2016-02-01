@@ -15,9 +15,9 @@ namespace Studio2RotaControl
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmStart());
+            Application.Run(frmStart = new frmStart());
         }
-
+        public static Form frmStart;
         #endregion Methods
     }
 }

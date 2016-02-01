@@ -19,12 +19,15 @@ namespace Studio2RotaControl
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             Form frmLogin = new frmLogin();
-            this.WindowState = FormWindowState.Minimized;
             frmLogin.Show();
+            WindowState = FormWindowState.Minimized;
         }
 
         private void btnViewRota_Click(object sender, EventArgs e)
         {
+            Form frmViewRota = new frmRotaControl(editable: false);
+            frmViewRota.Show();
+            WindowState = FormWindowState.Minimized;
         }
 
         private void ContextMenuExit_Click(object sender, EventArgs e)
@@ -38,12 +41,12 @@ namespace Studio2RotaControl
 
         private void frmStart_Resize(object sender, EventArgs e)
         {
-            if (FormWindowState.Minimized == this.WindowState)
+            if (FormWindowState.Minimized == WindowState)
             {
                 notifyIcon.Visible = true;
-                this.Hide();
+                Hide();
             }
-            else if (FormWindowState.Normal == this.WindowState)
+            else if (FormWindowState.Normal == WindowState)
             {
                 notifyIcon.Visible = false;
             }
@@ -52,8 +55,8 @@ namespace Studio2RotaControl
         private void notifyIcon_DoubleClick(object sender, EventArgs e)
         {
             notifyIcon.Visible = false;
-            this.Show();
-            this.WindowState = FormWindowState.Normal;
+            Show();
+            WindowState = FormWindowState.Normal;
         }
 
         #endregion Methods
