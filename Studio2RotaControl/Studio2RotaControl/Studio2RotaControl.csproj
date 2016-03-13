@@ -54,6 +54,12 @@
     <Compile Include="ctrlUserManagement.Designer.cs">
       <DependentUpon>ctrlUserManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAvailableStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAvailableStaff.Designer.cs">
+      <DependentUpon>frmAvailableStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,12 @@
     </Compile>
     <Compile Include="frmPasswordSet.Designer.cs">
       <DependentUpon>frmPasswordSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQualifications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQualifications.Designer.cs">
+      <DependentUpon>frmQualifications.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRotaControl.cs">
       <SubType>Form</SubType>
@@ -100,6 +112,9 @@
     <EmbeddedResource Include="ctrlUserManagement.resx">
       <DependentUpon>ctrlUserManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAvailableStaff.resx">
+      <DependentUpon>frmAvailableStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPasswordSet.resx">
       <DependentUpon>frmPasswordSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQualifications.resx">
+      <DependentUpon>frmQualifications.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRotaControl.resx">
       <DependentUpon>frmRotaControl.cs</DependentUpon>
@@ -150,13 +168,24 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo-small.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo-full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-ring-filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-ring-contrast.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,6 +1,6 @@
 ﻿namespace Studio2RotaControl
 {
-    partial class frmUserManagement
+    partial class FrmUserManagement
     {
         /// <summary>
         /// Required designer variable.
@@ -134,7 +134,7 @@
             this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.61465F));
             this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.38535F));
             this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tblSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tblSearch.Controls.Add(this.lblSearch, 1, 1);
             this.tblSearch.Controls.Add(this.lblSearchProperty, 1, 2);
             this.tblSearch.Controls.Add(this.lblSearchValue, 1, 3);
@@ -194,7 +194,7 @@
             this.lbxResults.ItemHeight = 20;
             this.lbxResults.Location = new System.Drawing.Point(23, 129);
             this.lbxResults.Name = "lbxResults";
-            this.lbxResults.Size = new System.Drawing.Size(728, 125);
+            this.lbxResults.Size = new System.Drawing.Size(725, 125);
             this.lbxResults.TabIndex = 3;
             // 
             // cbxProperty
@@ -230,7 +230,7 @@
             // btnHideEdit
             // 
             this.btnHideEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHideEdit.Location = new System.Drawing.Point(721, 260);
+            this.btnHideEdit.Location = new System.Drawing.Point(718, 260);
             this.btnHideEdit.Name = "btnHideEdit";
             this.btnHideEdit.Size = new System.Drawing.Size(30, 26);
             this.btnHideEdit.TabIndex = 7;
@@ -880,7 +880,7 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(784, 907);
             this.Controls.Add(this.tblMaster);
-            this.Name = "frmUserManagement";
+            this.Name = "FrmUserManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUserManagement";
             this.Load += new System.EventHandler(this.frmUserManagement_Load);

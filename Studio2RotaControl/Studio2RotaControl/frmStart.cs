@@ -3,32 +3,23 @@ using System.Windows.Forms;
 
 namespace Studio2RotaControl
 {
-    public partial class frmStart : Form
+    public partial class FrmStart : Form
     {
         #region Constructors
 
-        public frmStart()
+        public FrmStart()
         {
             InitializeComponent();
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer
+            {
+                SoundLocation = "../../../Media/MusicBox.wav"
+            };
+            player.Play();
         }
 
         #endregion Constructors
 
         #region Methods
-
-        private void btnLogIn_Click(object sender, EventArgs e)
-        {
-            Form frmLogin = new frmLogin();
-            frmLogin.Show();
-            WindowState = FormWindowState.Minimized;
-        }
-
-        private void btnViewRota_Click(object sender, EventArgs e)
-        {
-            Form frmViewRota = new frmRotaControl(editable: false);
-            frmViewRota.Show();
-            WindowState = FormWindowState.Minimized;
-        }
 
         private void ContextMenuExit_Click(object sender, EventArgs e)
         {
@@ -43,11 +34,13 @@ namespace Studio2RotaControl
         {
             if (FormWindowState.Minimized == WindowState)
             {
+                ShowInTaskbar = false;
                 notifyIcon.Visible = true;
                 Hide();
             }
-            else if (FormWindowState.Normal == WindowState)
+            else
             {
+                ShowInTaskbar = true;
                 notifyIcon.Visible = false;
             }
         }
@@ -60,5 +53,13 @@ namespace Studio2RotaControl
         }
 
         #endregion Methods
+
+        private void timerStart_Tick(object sender, EventArgs e)
+        {
+            timerStart.Stop();
+            Form frmLogin = new FrmLogin();
+            frmLogin.Show();
+            WindowState = FormWindowState.Minimized;
+        }
     }
 }

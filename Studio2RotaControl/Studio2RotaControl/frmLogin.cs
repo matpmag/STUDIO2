@@ -7,13 +7,14 @@ using System.Windows.Forms;
 
 namespace Studio2RotaControl
 {
-    public partial class frmLogin : Form
+    public partial class FrmLogin : Form
     {
         #region Constructors
 
-        public frmLogin()
+        public FrmLogin()
         {
             InitializeComponent();
+            Size = new Size(500, 350);
         }
 
         #endregion Constructors
@@ -73,7 +74,7 @@ namespace Studio2RotaControl
 
         private void tbxPassword_Leave(object sender, EventArgs e)
         {
-            if(tbxPassword.Text == "")
+            if (tbxPassword.Text == "")
             {
                 tbxPassword.Text = "Password";
                 tbxPassword.ForeColor = Color.DarkGray;
@@ -106,35 +107,10 @@ namespace Studio2RotaControl
 
         #endregion Methods
 
-        private void btnLogIn_Click(object sender, EventArgs e)
-        {
-            if (searchUsers(tbxUsername.Text, tbxPassword.Text))
-            {
-                if (classSessionStorage.PermLevel == 1)
-                {
-                    Form frmViewRota = new frmRotaControl(editable: false);
-                    frmViewRota.Show();
-                    Close();
-                    //tblMenu.Visible = false;
-                }
-                else
-                {
-                    tblMenu.Visible = true;
-                }
-            }
-        }
-
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
             Form frmNewUser = new frmNewUser();
             frmNewUser.Show();
-            Close();
-        }
-
-        private void btnViewRota_Click(object sender, EventArgs e)
-        {
-            Form frmViewRota = new frmRotaControl(editable: false);
-            frmViewRota.Show();
             Close();
         }
 
@@ -145,10 +121,41 @@ namespace Studio2RotaControl
             Close();
         }
 
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            if (searchUsers(tbxUsername.Text, tbxPassword.Text))
+            {
+                if (classSessionStorage.PermLevel == 1)
+                {
+                    Form frmViewRota = new frmRotaControl(editable: false);
+                    frmViewRota.Show();
+                    Close();
+                }
+                else
+                {
+                    Size = new Size(500, 550);
+                    tblMenu.Visible = true;
+                }
+            }
+            else
+            {
+                classSessionStorage.PermLevel = 0;
+                classSessionStorage.Username = "default";
+                Size = new Size(500, 350);
+            }
+        }
+
         private void btnManageStaff_Click(object sender, EventArgs e)
         {
-            Form frmEditUser = new frmUserManagement();
+            Form frmEditUser = new FrmUserManagement();
             frmEditUser.Show();
+            Close();
+        }
+
+        private void btnViewRota_Click(object sender, EventArgs e)
+        {
+            Form frmViewRota = new frmRotaControl(editable: false);
+            frmViewRota.Show();
             Close();
         }
     }

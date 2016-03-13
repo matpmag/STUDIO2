@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -12,11 +13,14 @@ namespace Studio2RotaControl
 
         private string password = "";
         private bool passwordSetFlag = false;
+        private List<string> qualificationsToAdd = null;
 
         #endregion Fields
 
         #region Constructors
-        string errorMessage = "The following errors are present in the data";
+
+        private string errorMessage;
+
         public frmNewUser()
         {
             InitializeComponent();
@@ -25,36 +29,10 @@ namespace Studio2RotaControl
         #endregion Constructors
 
         #region Methods
-        private int getPermLevel()
-        {
-            switch (cbxRole.SelectedIndex)
-            {
-                case 0:
-                case 1:
-                    return 3;
-                case 2:
-                    return 2;
-                default:
-                    return 1;
-            }
-        }
-        private char getGender()
-        {
-            if (rbtnMale.Checked)
-                return 'M';
-            else
-                return 'F';
-        }
-        private string getBasis()
-        {
-            if (rbtnFullTime.Checked)
-                return "FULL";
-            else
-                return "PART";
-        }
+
         private void addUser()
         {
-            if (errorInCredentials())
+            if (!errorInCredentials())
             {
                 MessageBox.Show(errorMessage, "Problem with new user credentials");
                 return;
@@ -83,11 +61,18 @@ namespace Studio2RotaControl
                         cmd.Parameters.Add("@ContactNumber", SqlDbType.VarChar, 20).Value = tbxContactNo.Text;
                         cmd.Parameters.Add("@Email", SqlDbType.VarChar, 50).Value = tbxEmail.Text;
 
-                        con.Open();
                         if (cmd.ExecuteNonQuery() < 0)
                             MessageBox.Show("User added successfully", "Success");
-                        con.Close();
                     }
+                    if (qualificationsToAdd != null)
+                        using (SqlCommand cmd = new SqlCommand("procedureAddQualification"))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            foreach (string qualification in qualificationsToAdd)
+                            {
+                                //TODO: ADD QUALIFICATIONS
+                            }
+                        }
                 }
                 catch
                 {
@@ -96,9 +81,15 @@ namespace Studio2RotaControl
             }
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            addUser();
+        }
+
         private bool errorInCredentials()
         {
             bool errorPresent = false;
+            errorMessage = "The following errors are present in the data";
             if (!passwordSetFlag)
             {
                 errorPresent = true;
@@ -150,11 +141,6 @@ namespace Studio2RotaControl
             return errorPresent;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            addUser();
-        }
-
         private void frmNewUser_Load(object sender, EventArgs e)
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["S2DataStore.ConnectionString"].ConnectionString))
@@ -172,11 +158,51 @@ namespace Studio2RotaControl
                 catch
                 {
                     MessageBox.Show("There has been an error in the execution of this command, please retry", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Close();
                 }
             }
         }
 
+        private string getBasis()
+        {
+            if (rbtnFullTime.Checked)
+                return "FULL";
+            else
+                return "PART";
+        }
+
+        private char getGender()
+        {
+            if (rbtnMale.Checked)
+                return 'M';
+            else
+                return 'F';
+        }
+
+        private int getPermLevel()
+        {
+            switch (cbxRole.SelectedIndex)
+            {
+                case 0:
+                case 1:
+                    return 3;
+
+                case 2:
+                    return 2;
+
+                default:
+                    return 1;
+            }
+        }
+
         #endregion Methods
+
+        private void btnDiscard_Click(object sender, EventArgs e)
+        {
+            Program.FrmStart.WindowState = FormWindowState.Normal;
+            Program.FrmStart.Show();
+            Close();
+        }
 
         private void btnPassword_Click(object sender, EventArgs e)
         {
@@ -184,11 +210,9 @@ namespace Studio2RotaControl
             frmPasswordSet.Show();
         }
 
-        private void btnDiscard_Click(object sender, EventArgs e)
+        private void btnQualifications_Click(object sender, EventArgs e)
         {
-            Program.frmStart.WindowState = FormWindowState.Normal;
-            Program.frmStart.Show();
-            Close();
+            Form frmQualification = new frmQualifications(ref qualificationsToAdd);
         }
     }
 }

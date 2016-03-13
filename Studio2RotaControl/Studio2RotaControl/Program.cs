@@ -7,6 +7,8 @@ namespace Studio2RotaControl
     {
         #region Methods
 
+        public static Form FrmStart;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -15,9 +17,9 @@ namespace Studio2RotaControl
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(frmStart = new frmStart());
+            Application.Run(FrmStart = new FrmStart());
         }
-        public static Form frmStart;
+
         #endregion Methods
     }
 }

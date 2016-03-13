@@ -183,9 +183,9 @@
             this.gbxProfile.Controls.Add(this.tblProfile);
             this.gbxProfile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxProfile.Location = new System.Drawing.Point(3, 113);
+            this.gbxProfile.Location = new System.Drawing.Point(3, 112);
             this.gbxProfile.Name = "gbxProfile";
-            this.gbxProfile.Size = new System.Drawing.Size(434, 205);
+            this.gbxProfile.Size = new System.Drawing.Size(434, 206);
             this.gbxProfile.TabIndex = 2;
             this.gbxProfile.TabStop = false;
             this.gbxProfile.Text = "Profile";
@@ -215,7 +215,7 @@
             this.tblProfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblProfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblProfile.Size = new System.Drawing.Size(428, 180);
+            this.tblProfile.Size = new System.Drawing.Size(428, 181);
             this.tblProfile.TabIndex = 0;
             // 
             // floGender
@@ -271,6 +271,12 @@
             this.cbxTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.cbxTitle.FormattingEnabled = true;
+            this.cbxTitle.Items.AddRange(new object[] {
+            "Mr",
+            "Mrs",
+            "Miss",
+            "Ms",
+            "Dr"});
             this.cbxTitle.Location = new System.Drawing.Point(114, 3);
             this.cbxTitle.Name = "cbxTitle";
             this.cbxTitle.Size = new System.Drawing.Size(311, 28);
@@ -323,7 +329,7 @@
             this.lblDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.lblDOB.Location = new System.Drawing.Point(3, 134);
             this.lblDOB.Name = "lblDOB";
-            this.lblDOB.Size = new System.Drawing.Size(105, 46);
+            this.lblDOB.Size = new System.Drawing.Size(105, 47);
             this.lblDOB.TabIndex = 13;
             this.lblDOB.Text = "Birth date:";
             // 
@@ -352,10 +358,9 @@
             // 
             // tblQualifications
             // 
-            this.tblQualifications.ColumnCount = 3;
+            this.tblQualifications.ColumnCount = 2;
             this.tblQualifications.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblQualifications.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblQualifications.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblQualifications.Controls.Add(this.btnQualifications, 1, 1);
             this.tblQualifications.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblQualifications.Location = new System.Drawing.Point(3, 3);
@@ -364,7 +369,7 @@
             this.tblQualifications.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblQualifications.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tblQualifications.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblQualifications.Size = new System.Drawing.Size(434, 104);
+            this.tblQualifications.Size = new System.Drawing.Size(434, 103);
             this.tblQualifications.TabIndex = 3;
             // 
             // btnQualifications
@@ -373,10 +378,11 @@
             this.btnQualifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.btnQualifications.Location = new System.Drawing.Point(23, 23);
             this.btnQualifications.Name = "btnQualifications";
-            this.btnQualifications.Size = new System.Drawing.Size(388, 58);
+            this.btnQualifications.Size = new System.Drawing.Size(408, 57);
             this.btnQualifications.TabIndex = 0;
             this.btnQualifications.Text = "Manage Qualifications";
             this.btnQualifications.UseVisualStyleBackColor = true;
+            this.btnQualifications.Click += new System.EventHandler(this.btnQualifications_Click);
             // 
             // gbxEmployment
             // 

@@ -1,6 +1,6 @@
 ﻿namespace Studio2RotaControl
 {
-    partial class frmLogin
+    partial class FrmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.tbxUsername = new System.Windows.Forms.TextBox();
             this.tbxPassword = new System.Windows.Forms.TextBox();
             this.btnLogIn = new System.Windows.Forms.Button();
@@ -137,7 +137,7 @@
             this.btnViewRota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.btnViewRota.Location = new System.Drawing.Point(3, 3);
             this.btnViewRota.Name = "btnViewRota";
-            this.btnViewRota.Size = new System.Drawing.Size(204, 76);
+            this.btnViewRota.Size = new System.Drawing.Size(204, 71);
             this.btnViewRota.TabIndex = 0;
             this.btnViewRota.Text = "View Rota";
             this.btnViewRota.UseVisualStyleBackColor = true;
@@ -149,7 +149,7 @@
             this.btnAddStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.btnAddStaff.Location = new System.Drawing.Point(3, 3);
             this.btnAddStaff.Name = "btnAddStaff";
-            this.btnAddStaff.Size = new System.Drawing.Size(204, 76);
+            this.btnAddStaff.Size = new System.Drawing.Size(204, 71);
             this.btnAddStaff.TabIndex = 1;
             this.btnAddStaff.Text = "Add Staff";
             this.btnAddStaff.UseVisualStyleBackColor = true;
@@ -159,9 +159,9 @@
             // 
             this.btnAmmendRota.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAmmendRota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnAmmendRota.Location = new System.Drawing.Point(3, 85);
+            this.btnAmmendRota.Location = new System.Drawing.Point(3, 80);
             this.btnAmmendRota.Name = "btnAmmendRota";
-            this.btnAmmendRota.Size = new System.Drawing.Size(204, 77);
+            this.btnAmmendRota.Size = new System.Drawing.Size(204, 71);
             this.btnAmmendRota.TabIndex = 2;
             this.btnAmmendRota.Text = "Ammend Rota";
             this.btnAmmendRota.UseVisualStyleBackColor = true;
@@ -171,9 +171,9 @@
             // 
             this.btnManageStaff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnManageStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.btnManageStaff.Location = new System.Drawing.Point(3, 85);
+            this.btnManageStaff.Location = new System.Drawing.Point(3, 80);
             this.btnManageStaff.Name = "btnManageStaff";
-            this.btnManageStaff.Size = new System.Drawing.Size(204, 77);
+            this.btnManageStaff.Size = new System.Drawing.Size(204, 71);
             this.btnManageStaff.TabIndex = 3;
             this.btnManageStaff.Text = "Manage Staff";
             this.btnManageStaff.UseVisualStyleBackColor = true;
@@ -186,7 +186,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.groupBox1.Location = new System.Drawing.Point(23, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(216, 193);
+            this.groupBox1.Size = new System.Drawing.Size(216, 182);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Rota";
@@ -203,7 +203,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(210, 165);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(210, 154);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // groupBox2
@@ -213,7 +213,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.groupBox2.Location = new System.Drawing.Point(245, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(216, 193);
+            this.groupBox2.Size = new System.Drawing.Size(216, 182);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Staff";
@@ -230,7 +230,7 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(210, 165);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(210, 154);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // tblMenu
@@ -248,20 +248,21 @@
             this.tblMenu.RowCount = 2;
             this.tblMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tblMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblMenu.Size = new System.Drawing.Size(484, 219);
+            this.tblMenu.Size = new System.Drawing.Size(484, 208);
             this.tblMenu.TabIndex = 7;
             this.tblMenu.Visible = false;
             // 
             // frmLogin
             // 
+            this.AcceptButton = this.btnLogIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 522);
+            this.ClientSize = new System.Drawing.Size(484, 511);
             this.Controls.Add(this.tblMenu);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "frmLogin";
+            this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

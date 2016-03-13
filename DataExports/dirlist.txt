@@ -1,0 +1,8 @@
+procedure_AddQualification
+procedure_AddStaff
+procedure_GetApplicableStaff
+procedure_GetMaxStaffID
+procedure_GetRolesByClasses
+procedure_GetRolesByPosition
+procedure_GetRolesByStaffID
+procedure_SearchUsers
