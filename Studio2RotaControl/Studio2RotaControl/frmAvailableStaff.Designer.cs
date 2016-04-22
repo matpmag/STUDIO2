@@ -41,7 +41,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel1.Controls.Add(this.btnSelect, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.lbxApplicableStaff, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblRoleRemind, 1, 1);
@@ -68,7 +68,7 @@
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(495, 34);
             this.btnSelect.TabIndex = 1;
-            this.btnSelect.Text = "button2";
+            this.btnSelect.Text = "Continue";
             this.btnSelect.UseVisualStyleBackColor = true;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
@@ -94,7 +94,7 @@
             this.lblRoleRemind.Name = "lblRoleRemind";
             this.lblRoleRemind.Size = new System.Drawing.Size(996, 20);
             this.lblRoleRemind.TabIndex = 3;
-            this.lblRoleRemind.Text = "Staff available for";
+            this.lblRoleRemind.Text = "Staff available for <ROLE>";
             // 
             // frmAvailableStaff
             // 
@@ -103,7 +103,8 @@
             this.ClientSize = new System.Drawing.Size(1043, 263);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmAvailableStaff";
-            this.Text = "frmAvailableStaff";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Studio2 | Assign Staff";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAvailableStaff_FormClosing);
             this.Load += new System.EventHandler(this.frmAvailableStaff_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

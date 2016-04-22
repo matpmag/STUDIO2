@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Studio2RotaControl
 {
-    public partial class frmRotaControl : Form
+    public partial class FrmRotaControl : Form
     {
         #region Fields
 
@@ -16,9 +16,10 @@ namespace Studio2RotaControl
 
         #region Constructors
 
-        public frmRotaControl(bool editable)
+        public FrmRotaControl(Form parent, bool editable)
         {
             InitializeComponent();
+            Icon = Studio2RotaControl.Properties.Resources.logo_small;
             if (!editable) btnEditRow.Visible = false;
             con = new SqlConnection(ConfigurationManager.ConnectionStrings["S2DataStore.ConnectionString"].ConnectionString);
             con.Open();
@@ -28,15 +29,20 @@ namespace Studio2RotaControl
 
         #region Methods
 
+        public void AssignmentFinished()
+        {
+            Enabled = true;
+            btnSearch_Click(new object(), new EventArgs());
+        }
+
         private void btnEditRow_Click(object sender, EventArgs e)
         {
+            if (dataGridView.SelectedRows.Count < 1)
+                return;
             bool boolAssignmentFinished = false;
-            Form frmSetAssigned = new frmAvailableStaff(dataGridView.Rows[dataGridView.SelectedRows[0].Index], con, ref boolAssignmentFinished);
+            Enabled = false;
+            Form frmSetAssigned = new frmAvailableStaff(dataGridView.Rows[dataGridView.SelectedRows[0].Index], con, ref boolAssignmentFinished, this);
             frmSetAssigned.Show();
-            /*while (!boolAssignmentFinished)
-            {
-                this.Enabled = false;
-            }*/
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -70,6 +76,20 @@ namespace Studio2RotaControl
             {
                 if (cbxSearchValue.SelectedItem == null)
                     return;
+                if (cbxSearchValue.SelectedIndex == 0)
+                {
+                    using (SqlCommand cmd = new SqlCommand("procedure_GetRolesByAll", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+                        SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+                        DataTable table = new DataTable();
+                        dataAdapter.Fill(table);
+                        dataGridView.DataSource = table;
+                    }
+                    return;
+                }
                 using (SqlCommand cmd = new SqlCommand("procedure_GetRolesByPosition", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -133,6 +153,7 @@ namespace Studio2RotaControl
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         cbxSearchValue.Items.Clear();
+                        cbxSearchValue.Items.Add("ANY");
                         while (dr.Read())
                         {
                             cbxSearchValue.Items.Add(dr[0]);
@@ -148,5 +169,80 @@ namespace Studio2RotaControl
         }
 
         #endregion Methods
+
+        private void btnCollapse_Click(object sender, EventArgs e)
+        {
+            if (!splitContainer1.Panel1Collapsed)
+            {
+                splitContainer1.Panel1Collapsed = true;
+                btnCollapse.Text = ">>";
+            }
+            else
+            {
+                splitContainer1.Panel1Collapsed = false;
+                btnCollapse.Text = "<<";
+            }
+        }
+
+        private void btnScan_Click(object sender, EventArgs e)
+        {
+            //System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            //using (SqlCommand cmd = new SqlCommand("procedure_FindAllOverlap", con))
+            //{
+            //    cmd.CommandType = CommandType.StoredProcedure;
+            //    SqlDataReader dr = cmd.ExecuteReader();
+            //    while (dr.Read())
+            //    {
+            //        foreach (DataGridViewRow dgvr in dataGridView.Rows)
+            //        {
+            //            FLAG01 = false;
+            //            string readerID = dr[0].ToString();
+
+            //            string rowID = dgvr.Cells[0].Value.ToString();
+            //            sb.AppendLine(readerID + " - " + rowID);
+            //            if (dr[0].ToString() == dgvr.Cells[0].ToString())
+            //            {
+            //                FLAG01 = true;
+            //                dgvr.DefaultCellStyle.BackColor = System.Drawing.Color.Red;
+            //            }
+            //            //else
+            //            //    dgvr.DefaultCellStyle.BackColor = System.Drawing.Color.Gray;
+            //        }
+            //        System.IO.File.WriteAllText("../ScanLOG.txt", sb.ToString());
+
+            //    }
+            //    dr.Close();
+            //}
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            foreach (DataGridViewRow dgvr in dataGridView.Rows)
+            {
+                int rowID = Convert.ToInt32(dgvr.Cells[0].Value.ToString());
+                int rowID2 = Convert.ToInt32(dgvr.Cells[1].Value.ToString());
+                using (SqlCommand cmd = new SqlCommand("procedure_FindAllOverlap", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@RoleID", SqlDbType.Int).Value = rowID;
+                    cmd.Parameters.Add("@StaffID", SqlDbType.Int).Value = rowID2;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        string readerID = dr[0].ToString();
+
+                        sb.AppendLine(readerID + " - " + rowID);
+                        foreach (DataGridViewRow dgvrConflict in dataGridView.Rows)
+                        {
+                            if (readerID == dgvrConflict.Cells[0].Value.ToString())
+                                dgvr.DefaultCellStyle.BackColor = System.Drawing.Color.Red;
+                        }
+
+                        //else
+                        //    dgvr.DefaultCellStyle.BackColor = System.Drawing.Color.Gray;
+                    }
+                    System.IO.File.WriteAllText("../ScanLOG.txt", sb.ToString());
+
+                    dr.Close();
+                }
+            }
+        }
     }
 }

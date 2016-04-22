@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Studio2RotaControl
 {
-    public partial class frmPasswordSet : Form
+    public partial class FrmPasswordSet : Form
     {
         #region Fields
 
@@ -22,9 +22,10 @@ namespace Studio2RotaControl
 
         #region Constructors
 
-        public frmPasswordSet(ref string passRef, ref bool successRef)
+        public FrmPasswordSet(ref string passRef, ref bool successRef)
         {
             InitializeComponent();
+            Icon = Studio2RotaControl.Properties.Resources.logo_small;
             passOut = passRef;
             successOut = successRef;
         }

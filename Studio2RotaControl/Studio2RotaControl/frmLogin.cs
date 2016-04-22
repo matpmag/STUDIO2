@@ -11,9 +11,10 @@ namespace Studio2RotaControl
     {
         #region Constructors
 
-        public FrmLogin()
+        public FrmLogin(Form parent)
         {
             InitializeComponent();
+            Icon = Studio2RotaControl.Properties.Resources.logo_small;
             Size = new Size(500, 350);
         }
 
@@ -109,16 +110,16 @@ namespace Studio2RotaControl
 
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
-            Form frmNewUser = new frmNewUser();
+            Form frmNewUser = new FrmNewUser(this);
             frmNewUser.Show();
-            Close();
+            Hide();
         }
 
         private void btnAmmendRota_Click(object sender, EventArgs e)
         {
-            Form frmViewRota = new frmRotaControl(editable: true);
+            Form frmViewRota = new FrmRotaControl(this, editable: true);
             frmViewRota.Show();
-            Close();
+            Hide();
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)
@@ -127,9 +128,9 @@ namespace Studio2RotaControl
             {
                 if (classSessionStorage.PermLevel == 1)
                 {
-                    Form frmViewRota = new frmRotaControl(editable: false);
+                    Form frmViewRota = new FrmRotaControl(this, editable: false);
                     frmViewRota.Show();
-                    Close();
+                    Hide();
                 }
                 else
                 {
@@ -147,14 +148,14 @@ namespace Studio2RotaControl
 
         private void btnManageStaff_Click(object sender, EventArgs e)
         {
-            Form frmEditUser = new FrmUserManagement();
+            Form frmEditUser = new FrmUserManagement(this);
             frmEditUser.Show();
-            Close();
+            Hide();
         }
 
         private void btnViewRota_Click(object sender, EventArgs e)
         {
-            Form frmViewRota = new frmRotaControl(editable: false);
+            Form frmViewRota = new FrmRotaControl(this, editable: false);
             frmViewRota.Show();
             Close();
         }

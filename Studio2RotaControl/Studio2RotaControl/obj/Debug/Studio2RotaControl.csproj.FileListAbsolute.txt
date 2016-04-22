@@ -15,3 +15,4 @@ C:\Users\Matthew\Documents\GitHub\Online\STUDIO2\Studio2RotaControl\Studio2RotaC
 C:\Users\Matthew\Documents\GitHub\Online\STUDIO2\Studio2RotaControl\Studio2RotaControl\obj\Debug\Studio2RotaControl.frmRotaControl.resources
 C:\Users\Matthew\Documents\GitHub\Online\STUDIO2\Studio2RotaControl\Studio2RotaControl\obj\Debug\Studio2RotaControl.frmAvailableStaff.resources
 C:\Users\Matthew\Documents\GitHub\Online\STUDIO2\Studio2RotaControl\Studio2RotaControl\obj\Debug\Studio2RotaControl.frmQualifications.resources
+C:\Users\Matthew\Documents\GitHub\Online\STUDIO2\Studio2RotaControl\Studio2RotaControl\obj\Debug\Studio2RotaControl.frmQuickSetQualifications.resources

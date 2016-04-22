@@ -1,6 +1,6 @@
 ﻿namespace Studio2RotaControl
 {
-    partial class frmNewUser
+    partial class FrmNewUser
     {
         /// <summary>
         /// Required designer variable.
@@ -583,10 +583,11 @@
             // 
             // tbxAddress1
             // 
+            this.tbxAddress1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxAddress1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.tbxAddress1.Location = new System.Drawing.Point(130, 3);
             this.tbxAddress1.Name = "tbxAddress1";
-            this.tbxAddress1.Size = new System.Drawing.Size(328, 26);
+            this.tbxAddress1.Size = new System.Drawing.Size(408, 26);
             this.tbxAddress1.TabIndex = 6;
             // 
             // lblAddress2
@@ -601,10 +602,11 @@
             // 
             // tbxAddress2
             // 
+            this.tbxAddress2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.tbxAddress2.Location = new System.Drawing.Point(130, 40);
             this.tbxAddress2.Name = "tbxAddress2";
-            this.tbxAddress2.Size = new System.Drawing.Size(328, 26);
+            this.tbxAddress2.Size = new System.Drawing.Size(408, 26);
             this.tbxAddress2.TabIndex = 7;
             // 
             // lblCity
@@ -619,10 +621,11 @@
             // 
             // tbxCity
             // 
+            this.tbxCity.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.tbxCity.Location = new System.Drawing.Point(130, 77);
             this.tbxCity.Name = "tbxCity";
-            this.tbxCity.Size = new System.Drawing.Size(328, 26);
+            this.tbxCity.Size = new System.Drawing.Size(408, 26);
             this.tbxCity.TabIndex = 8;
             // 
             // lblPostcode
@@ -637,10 +640,11 @@
             // 
             // tbxPostcode
             // 
+            this.tbxPostcode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxPostcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.tbxPostcode.Location = new System.Drawing.Point(130, 114);
             this.tbxPostcode.Name = "tbxPostcode";
-            this.tbxPostcode.Size = new System.Drawing.Size(328, 26);
+            this.tbxPostcode.Size = new System.Drawing.Size(408, 26);
             this.tbxPostcode.TabIndex = 9;
             // 
             // lblContactNo
@@ -655,10 +659,11 @@
             // 
             // tbxContactNo
             // 
+            this.tbxContactNo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxContactNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.tbxContactNo.Location = new System.Drawing.Point(130, 151);
             this.tbxContactNo.Name = "tbxContactNo";
-            this.tbxContactNo.Size = new System.Drawing.Size(328, 26);
+            this.tbxContactNo.Size = new System.Drawing.Size(408, 26);
             this.tbxContactNo.TabIndex = 10;
             // 
             // lblEmail
@@ -673,10 +678,11 @@
             // 
             // tbxEmail
             // 
+            this.tbxEmail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.tbxEmail.Location = new System.Drawing.Point(130, 188);
             this.tbxEmail.Name = "tbxEmail";
-            this.tbxEmail.Size = new System.Drawing.Size(328, 26);
+            this.tbxEmail.Size = new System.Drawing.Size(408, 26);
             this.tbxEmail.TabIndex = 11;
             // 
             // tblExit
@@ -724,14 +730,15 @@
             this.btnDiscard.UseVisualStyleBackColor = true;
             this.btnDiscard.Click += new System.EventHandler(this.btnDiscard_Click);
             // 
-            // frmNewUser
+            // FrmNewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 631);
             this.Controls.Add(this.tblEdit);
-            this.Name = "frmNewUser";
-            this.Text = "frmNewUser";
+            this.Name = "FrmNewUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Studio2 | New User";
             this.Load += new System.EventHandler(this.frmNewUser_Load);
             this.tblEdit.ResumeLayout(false);
             this.tblStaffID.ResumeLayout(false);

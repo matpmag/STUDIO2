@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Studio2RotaControl
 {
-    public partial class frmQualifications : Form
+    public partial class FrmQualifications : Form
     {
         #region Fields
 
@@ -14,9 +14,10 @@ namespace Studio2RotaControl
 
         #region Constructors
 
-        public frmQualifications(ref List<string> listQualRef)
+        public FrmQualifications(ref List<string> listQualRef)
         {
             InitializeComponent();
+            Icon = Studio2RotaControl.Properties.Resources.logo_small;
             chosenQualifications = listQualRef;
         }
 

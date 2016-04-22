@@ -10,6 +10,7 @@ namespace Studio2RotaControl
         public FrmStart()
         {
             InitializeComponent();
+            Icon = Studio2RotaControl.Properties.Resources.logo_small;
             System.Media.SoundPlayer player = new System.Media.SoundPlayer
             {
                 SoundLocation = "../../../Media/MusicBox.wav"
@@ -57,7 +58,7 @@ namespace Studio2RotaControl
         private void timerStart_Tick(object sender, EventArgs e)
         {
             timerStart.Stop();
-            Form frmLogin = new FrmLogin();
+            Form frmLogin = new FrmLogin(this);
             frmLogin.Show();
             WindowState = FormWindowState.Minimized;
         }

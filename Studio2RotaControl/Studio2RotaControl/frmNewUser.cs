@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Studio2RotaControl
 {
-    public partial class frmNewUser : Form
+    public partial class FrmNewUser : Form
     {
         #region Fields
 
@@ -21,9 +21,10 @@ namespace Studio2RotaControl
 
         private string errorMessage;
 
-        public frmNewUser()
+        public FrmNewUser(Form parent)
         {
             InitializeComponent();
+            Icon = Studio2RotaControl.Properties.Resources.logo_small;
         }
 
         #endregion Constructors
@@ -206,13 +207,14 @@ namespace Studio2RotaControl
 
         private void btnPassword_Click(object sender, EventArgs e)
         {
-            Form frmPasswordSet = new frmPasswordSet(ref password, ref passwordSetFlag);
+            Form frmPasswordSet = new FrmPasswordSet(ref password, ref passwordSetFlag);
             frmPasswordSet.Show();
         }
 
         private void btnQualifications_Click(object sender, EventArgs e)
         {
-            Form frmQualification = new frmQualifications(ref qualificationsToAdd);
+            Form frmQualification = new FrmQualifications(ref qualificationsToAdd);
+            frmQualification.Show();
         }
     }
 }

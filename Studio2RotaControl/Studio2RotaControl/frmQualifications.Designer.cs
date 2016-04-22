@@ -1,6 +1,6 @@
 ﻿namespace Studio2RotaControl
 {
-    partial class frmQualifications
+    partial class FrmQualifications
     {
         /// <summary>
         /// Required designer variable.
@@ -30,11 +30,11 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblDesc = new System.Windows.Forms.Label();
-            this.cbxJudo = new System.Windows.Forms.CheckBox();
-            this.cbxYoga = new System.Windows.Forms.CheckBox();
-            this.cbxPilates = new System.Windows.Forms.CheckBox();
-            this.cbxTaiChi = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbxPilates = new System.Windows.Forms.CheckBox();
+            this.cbxYoga = new System.Windows.Forms.CheckBox();
+            this.cbxTaiChi = new System.Windows.Forms.CheckBox();
+            this.cbxJudo = new System.Windows.Forms.CheckBox();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -72,50 +72,6 @@
             this.lblDesc.TabIndex = 0;
             this.lblDesc.Text = "The member of staff is qualified in the following area(s)";
             // 
-            // cbxJudo
-            // 
-            this.cbxJudo.AutoSize = true;
-            this.cbxJudo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.cbxJudo.Location = new System.Drawing.Point(3, 3);
-            this.cbxJudo.Name = "cbxJudo";
-            this.cbxJudo.Size = new System.Drawing.Size(75, 24);
-            this.cbxJudo.TabIndex = 0;
-            this.cbxJudo.Text = "JUDO";
-            this.cbxJudo.UseVisualStyleBackColor = true;
-            // 
-            // cbxYoga
-            // 
-            this.cbxYoga.AutoSize = true;
-            this.cbxYoga.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.cbxYoga.Location = new System.Drawing.Point(128, 3);
-            this.cbxYoga.Name = "cbxYoga";
-            this.cbxYoga.Size = new System.Drawing.Size(75, 24);
-            this.cbxYoga.TabIndex = 1;
-            this.cbxYoga.Text = "YOGA";
-            this.cbxYoga.UseVisualStyleBackColor = true;
-            // 
-            // cbxPilates
-            // 
-            this.cbxPilates.AutoSize = true;
-            this.cbxPilates.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.cbxPilates.Location = new System.Drawing.Point(128, 41);
-            this.cbxPilates.Name = "cbxPilates";
-            this.cbxPilates.Size = new System.Drawing.Size(96, 24);
-            this.cbxPilates.TabIndex = 2;
-            this.cbxPilates.Text = "PILATES";
-            this.cbxPilates.UseVisualStyleBackColor = true;
-            // 
-            // cbxTaiChi
-            // 
-            this.cbxTaiChi.AutoSize = true;
-            this.cbxTaiChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.cbxTaiChi.Location = new System.Drawing.Point(3, 41);
-            this.cbxTaiChi.Name = "cbxTaiChi";
-            this.cbxTaiChi.Size = new System.Drawing.Size(82, 24);
-            this.cbxTaiChi.TabIndex = 3;
-            this.cbxTaiChi.Text = "TAICHI";
-            this.cbxTaiChi.UseVisualStyleBackColor = true;
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -133,6 +89,50 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(251, 77);
             this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // cbxPilates
+            // 
+            this.cbxPilates.AutoSize = true;
+            this.cbxPilates.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.cbxPilates.Location = new System.Drawing.Point(128, 41);
+            this.cbxPilates.Name = "cbxPilates";
+            this.cbxPilates.Size = new System.Drawing.Size(96, 24);
+            this.cbxPilates.TabIndex = 2;
+            this.cbxPilates.Text = "PILATES";
+            this.cbxPilates.UseVisualStyleBackColor = true;
+            // 
+            // cbxYoga
+            // 
+            this.cbxYoga.AutoSize = true;
+            this.cbxYoga.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.cbxYoga.Location = new System.Drawing.Point(128, 3);
+            this.cbxYoga.Name = "cbxYoga";
+            this.cbxYoga.Size = new System.Drawing.Size(75, 24);
+            this.cbxYoga.TabIndex = 1;
+            this.cbxYoga.Text = "YOGA";
+            this.cbxYoga.UseVisualStyleBackColor = true;
+            // 
+            // cbxTaiChi
+            // 
+            this.cbxTaiChi.AutoSize = true;
+            this.cbxTaiChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.cbxTaiChi.Location = new System.Drawing.Point(3, 41);
+            this.cbxTaiChi.Name = "cbxTaiChi";
+            this.cbxTaiChi.Size = new System.Drawing.Size(82, 24);
+            this.cbxTaiChi.TabIndex = 3;
+            this.cbxTaiChi.Text = "TAICHI";
+            this.cbxTaiChi.UseVisualStyleBackColor = true;
+            // 
+            // cbxJudo
+            // 
+            this.cbxJudo.AutoSize = true;
+            this.cbxJudo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.cbxJudo.Location = new System.Drawing.Point(3, 3);
+            this.cbxJudo.Name = "cbxJudo";
+            this.cbxJudo.Size = new System.Drawing.Size(75, 24);
+            this.cbxJudo.TabIndex = 0;
+            this.cbxJudo.Text = "JUDO";
+            this.cbxJudo.UseVisualStyleBackColor = true;
             // 
             // btnConfirm
             // 
@@ -152,9 +152,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(297, 227);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frmQualifications";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Studio2 | Qualifications";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

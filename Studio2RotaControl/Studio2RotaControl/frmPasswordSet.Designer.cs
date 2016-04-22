@@ -1,6 +1,6 @@
 ﻿namespace Studio2RotaControl
 {
-    partial class frmPasswordSet
+    partial class FrmPasswordSet
     {
         /// <summary>
         /// Required designer variable.

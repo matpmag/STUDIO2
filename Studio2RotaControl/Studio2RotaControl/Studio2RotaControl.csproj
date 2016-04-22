@@ -84,6 +84,12 @@
     <Compile Include="frmQualifications.Designer.cs">
       <DependentUpon>frmQualifications.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQuickSetQualifications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuickSetQualifications.Designer.cs">
+      <DependentUpon>frmQuickSetQualifications.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRotaControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,12 +108,21 @@
     <Compile Include="frmUserManagement.Designer.cs">
       <DependentUpon>frmUserManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="logger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="S2DataStoreDataSet.cs">
+      <DependentUpon>S2DataStoreDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="S2DataStoreDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>S2DataStoreDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="S2DataStoreSetUpdate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>S2DataStoreSetUpdate.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ctrlUserManagement.resx">
       <DependentUpon>ctrlUserManagement.cs</DependentUpon>
@@ -126,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQualifications.resx">
       <DependentUpon>frmQualifications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuickSetQualifications.resx">
+      <DependentUpon>frmQuickSetQualifications.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRotaControl.resx">
       <DependentUpon>frmRotaControl.cs</DependentUpon>
@@ -166,6 +184,18 @@
     <None Include="S2DataStoreDataSet.xss">
       <DependentUpon>S2DataStoreDataSet.xsd</DependentUpon>
     </None>
+    <None Include="S2DataStoreSetUpdate.xsc">
+      <DependentUpon>S2DataStoreSetUpdate.xsd</DependentUpon>
+    </None>
+    <None Include="S2DataStoreSetUpdate.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>S2DataStoreSetUpdate.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="S2DataStoreSetUpdate.xss">
+      <DependentUpon>S2DataStoreSetUpdate.xsd</DependentUpon>
+    </None>
+    <None Include="UserSettings.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
