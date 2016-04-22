@@ -739,6 +739,7 @@
             this.Name = "FrmNewUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Studio2 | New User";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmNewUser_FormClosing);
             this.Load += new System.EventHandler(this.frmNewUser_Load);
             this.tblEdit.ResumeLayout(false);
             this.tblStaffID.ResumeLayout(false);

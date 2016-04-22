@@ -933,6 +933,7 @@
             this.Name = "FrmUserManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Studio2 |  User Management";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmUserManagement_FormClosing);
             this.Load += new System.EventHandler(this.frmUserManagement_Load);
             this.tblSearch.ResumeLayout(false);
             this.tblSearch.PerformLayout();

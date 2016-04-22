@@ -157,7 +157,12 @@ namespace Studio2RotaControl
         {
             Form frmViewRota = new FrmRotaControl(this, editable: false);
             frmViewRota.Show();
-            Close();
+            Hide();
+        }
+
+        private void FrmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

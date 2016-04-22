@@ -14,7 +14,7 @@ namespace Studio2RotaControl
         private string password = "";
         private bool passwordSetFlag = false;
         private List<string> qualificationsToAdd = null;
-
+        Form parentForm;
         #endregion Fields
 
         #region Constructors
@@ -24,6 +24,7 @@ namespace Studio2RotaControl
         public FrmNewUser(Form parent)
         {
             InitializeComponent();
+            parentForm = parent;
             Icon = Studio2RotaControl.Properties.Resources.logo_small;
         }
 
@@ -66,13 +67,15 @@ namespace Studio2RotaControl
                             MessageBox.Show("User added successfully", "Success");
                     }
                     if (qualificationsToAdd != null)
-                        using (SqlCommand cmd = new SqlCommand("procedureAddQualification"))
+                        foreach (string qualification in qualificationsToAdd)
+                        {
+                            using (SqlCommand cmd = new SqlCommand("procedureAddQualification"))
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
-                            foreach (string qualification in qualificationsToAdd)
-                            {
-                                //TODO: ADD QUALIFICATIONS
-                            }
+                                cmd.Parameters.Add("StaffID", SqlDbType.Int).Value = Convert.ToInt32(lblStaffID.Text);
+                                cmd.Parameters.Add("Field", SqlDbType.VarChar, 15).Value = qualification;
+                                cmd.ExecuteNonQuery();
+                        }
                         }
                 }
                 catch
@@ -215,6 +218,11 @@ namespace Studio2RotaControl
         {
             Form frmQualification = new FrmQualifications(ref qualificationsToAdd);
             frmQualification.Show();
+        }
+
+        private void FrmNewUser_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            parentForm.Show();
         }
     }
 }

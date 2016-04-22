@@ -11,6 +11,7 @@ namespace Studio2RotaControl
         #region Fields
 
         private SqlConnection con;
+        Form parentForm;
 
         #endregion Fields
 
@@ -19,6 +20,7 @@ namespace Studio2RotaControl
         public FrmRotaControl(Form parent, bool editable)
         {
             InitializeComponent();
+            parentForm = parent;
             Icon = Studio2RotaControl.Properties.Resources.logo_small;
             if (!editable) btnEditRow.Visible = false;
             con = new SqlConnection(ConfigurationManager.ConnectionStrings["S2DataStore.ConnectionString"].ConnectionString);
@@ -243,6 +245,11 @@ namespace Studio2RotaControl
                     dr.Close();
                 }
             }
+        }
+
+        private void FrmRotaControl_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            parentForm.Show();
         }
     }
 }

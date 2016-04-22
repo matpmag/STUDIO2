@@ -27,8 +27,14 @@ namespace Studio2RotaControl
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            foreach (CheckBox cbx in Controls)
+            foreach (Control crl in Controls)
             {
+                CheckBox cbx = new CheckBox();
+                if(crl.GetType() == cbx.GetType())
+                {
+                    cbx = (CheckBox)crl;
+                }
+                else { return; }
                 if (cbx.Checked)
                     chosenQualifications.Add(cbx.Text);
                 Close();

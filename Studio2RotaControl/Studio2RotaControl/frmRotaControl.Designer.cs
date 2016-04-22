@@ -285,16 +285,17 @@
             this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip.ToolTipTitle = "Info";
             // 
-            // frmRotaControl
+            // FrmRotaControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1334, 633);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "frmRotaControl";
+            this.Name = "FrmRotaControl";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Studio2 | Rota";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmRotaControl_FormClosing);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);

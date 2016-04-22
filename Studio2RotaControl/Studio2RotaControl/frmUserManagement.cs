@@ -14,10 +14,12 @@ namespace Studio2RotaControl
         private SqlConnection con;
         private userInMemory userToEdit = null;
         private List<string> qualificationsToAdd = null;
+        Form parentForm;
 
         public FrmUserManagement(Form parent)
         {
             InitializeComponent();
+            parentForm = parent;
             Icon = Studio2RotaControl.Properties.Resources.logo_small;
             con = new SqlConnection(ConfigurationManager.ConnectionStrings["S2DataStore.ConnectionString"].ConnectionString);
             con.Open();
@@ -104,6 +106,7 @@ namespace Studio2RotaControl
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
+            qualificationsToAdd = null;
             if (splitContainer1.Panel2Collapsed)
             {
                 splitContainer1.Panel2Collapsed = false;
@@ -186,6 +189,25 @@ namespace Studio2RotaControl
 
                 cmd.ExecuteNonQuery();
             }
+            if (qualificationsToAdd != null)
+            {
+                using (SqlCommand cmd = new SqlCommand("procedure_ClearQualification"))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("StaffID", SqlDbType.Int).Value = holdUser.StaffID;
+                    cmd.ExecuteNonQuery();
+                }
+                foreach (string qualification in qualificationsToAdd)
+                {
+                    using (SqlCommand cmd = new SqlCommand("procedure_AddQualification"))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("StaffID", SqlDbType.Int).Value = holdUser.StaffID;
+                        cmd.Parameters.Add("Field", SqlDbType.VarChar, 15).Value = qualification;
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
             userToEdit = holdUser;
         }
 
@@ -232,6 +254,11 @@ namespace Studio2RotaControl
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmUserManagement_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            parentForm.Show();
         }
     }
 }
